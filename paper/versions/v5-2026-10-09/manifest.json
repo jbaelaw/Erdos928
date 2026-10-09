@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "manuscript_version": "5",
+  "version_date": "2026-10-09",
+  "language": "en",
+  "title": "Erdős Problem 928: quantitative comparisons and original formulations",
+  "author": "JI HO BAE",
+  "pages": 4,
+  "bibliography_items": 7,
+  "baseline_repository_commit": "f8dcc9eba2824d5efb0748c3b22c2bb001d69443",
+  "files": {
+    "erdos928_note.tex": {
+      "sha256": "0e9d8480945f2f96a0c03daa33adbcfbfe63329f325cef1c781e975a6f2cf06f",
+      "bytes": 17478
+    },
+    "erdos928_note.pdf": {
+      "sha256": "d78ffcd4e19927a87ab889d9f154c369cae60af80764dd6ffc359645ecbcf4ba",
+      "bytes": 340818
+    }
+  },
+  "table": {
+    "rows": 5,
+    "columns": 3,
+    "named_formulations_and_sources": true,
+    "normalized_limits": true
+  },
+  "verification": {
+    "editorial_scope": "Focused English prose revision throughout the abstract, introduction, proof and source discussions; four parallel editorial reviews followed by root integration.",
+    "mathematics_and_sources": "All displayed and inline mathematical expressions, the complete table and bibliography preserved from version 4.",
+    "bilingual_consistency": "Displayed and inline mathematics, citation keys, numbering and external URLs agree with the Korean edition.",
+    "latex": "Desktop compiler and exported PDF build succeeded in both languages; no undefined references, missing glyphs or overfull/underfull box warnings.",
+    "visual_review": "All four English and all four Korean pages inspected.",
+    "source_and_export": "Shipped PDF and source match the reviewed artifacts byte-for-byte.",
+    "analytic_input": "The joint Dickman law and its fixed-threshold version are cited results due to OpenAI; the complete upstream analytic proof was not independently reverified in this editorial pass.",
+    "formalization_scope": "No Lean changes or new formal-verification claim."
+  },
+  "preservation": "Every earlier manuscript edition and existing Lean artifact is retained; the separate Lean development branch is unaffected."
+}
