@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "manuscript_version": "2",
+  "version_date": "2026-10-09",
+  "language": "en",
+  "title": "Erdős Problem 928: quantitative comparisons and original formulations",
+  "author": "JI HO BAE",
+  "pages": 4,
+  "bibliography_items": 7,
+  "baseline_repository_commit": "8cd4a3f82b22000c860560b6c090e4ac585e8f03",
+  "files": {
+    "erdos928_note.tex": {
+      "sha256": "b9518b15ec4f1aa1234dc251191d49b855d0aa7f8e395086ef57d5782bc308f8",
+      "bytes": 15502
+    },
+    "erdos928_note.pdf": {
+      "sha256": "8270692dae350c05cd1611693ff4764997c0c91b035e1ba801a2638973a365d1",
+      "bytes": 337248
+    }
+  },
+  "verification": {
+    "source_and_export": "Matched byte-for-byte to the reviewed final English manuscript.",
+    "latex": "pdfLaTeX, TeX Live 2026; no undefined references, missing glyphs, or overfull/underfull box warnings.",
+    "visual_review": "All four English pages inspected.",
+    "mathematical_scope": "Finite comparison bounds and their consequences from the explicitly cited OpenAI joint Dickman law.",
+    "formalization_scope": "This manuscript revision adds no Lean code and does not extend the certification scope of the existing formalization.",
+    "upstream_analytic_proof_independently_reverified": false
+  },
+  "preservation": "Existing repository files are retained without modification; this version is added under paper/versions/."
+}
