@@ -1,0 +1,66 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  bubblewrap
+0 upgraded, 1 newly installed, 0 to remove and 12 not upgraded.
+Need to get 50.4 kB of archives.
+After this operation, 133 kB of additional disk space will be used.
+Get:1 http://mirrors.digitalocean.com/ubuntu noble-updates/main amd64 bubblewrap amd64 0.9.0-1ubuntu0.3 [50.4 kB]
+Fetched 50.4 kB in 3s (20.1 kB/s)
+Selecting previously unselected package bubblewrap.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 75942 files and directories currently installed.)
+Preparing to unpack .../bubblewrap_0.9.0-1ubuntu0.3_amd64.deb ...
+Unpacking bubblewrap (0.9.0-1ubuntu0.3) ...
+Setting up bubblewrap (0.9.0-1ubuntu0.3) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+
+Running kernel seems to be up-to-date.
+
+Restarting services...
+
+Service restarts being deferred:
+ systemctl restart systemd-logind.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+Resolving dependencies
+Building Challenge
+⚠ [9015/9016] Built Challenge (5.1s)
+warning: Challenge.lean:57:8: declaration uses `sorry`
+warning: Challenge.lean:66:8: declaration uses `sorry`
+warning: Challenge.lean:74:8: declaration uses `sorry`
+Build completed successfully (9016 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, Erdos928.real_count_difference_bound, Erdos928.density_transfer, Erdos928.problem928_of_jointDickmanLaw, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+ℹ [9015/9017] Replayed Erdos928
+info: Erdos928.lean:253:0: 'Erdos928.count_difference_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Erdos928.lean:254:0: 'Erdos928.real_count_difference_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Erdos928.lean:255:0: 'Erdos928.density_difference_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Erdos928.lean:256:0: 'Erdos928.density_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Erdos928.lean:257:0: 'Erdos928.problem928_of_jointDickmanLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (9017 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, Erdos928.real_count_difference_bound, Erdos928.density_transfer, Erdos928.problem928_of_jointDickmanLaw, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean paranoid kernel on solution
+Lean paranoid kernel accepts the solution
+Running lean4lean kernel on solution
+checked 16452 declarations
+lean4lean kernel accepts the solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running con-leche kernel on solution
+con-leche: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)
+con-leche: accepted 16451 declarations (--verified)
+con-leche kernel accepts the solution
+Running con-ron kernel on solution
+con-ron: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)
+con-ron: accepted 16451 declarations (--verified)
+con-ron kernel accepts the solution
+Running Lean default kernel on solution
+Lean default kernel accepts the solution
+Your solution is okay!

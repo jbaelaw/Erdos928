@@ -1,0 +1,22 @@
+{
+  "status": "pass",
+  "command": "lake comparator --config comparator.json --paranoid",
+  "exit_code": 0,
+  "lean": "v4.35.0-rc3",
+  "mathlib": "b84a70d6a5ed793cc46184160f4d4188d8c825fb",
+  "accepted_kernels": [
+    "nanoda",
+    "Lean paranoid",
+    "lean4lean",
+    "con-leche",
+    "con-ron",
+    "Lean default"
+  ],
+  "sources": {
+    "Erdos928.lean": "95325c548f6a31bd58b2d5308f4047c38069cdeb16e0760a936aa38855b35ebc",
+    "Challenge.lean": "0a4e4c139eae8a8b31494f5f5e94d15ad1302605c1d9c7741fdf6c365bce1890",
+    "Solution.lean": "ef2a31482e66a466addc872a0d94b997c1d49f816b9962520dacd6a8d95efccf",
+    "comparator.json": "efc1dbbbba1758699e6acd89a036735a3aa7ecbe6ace4169e92522df0bab4f4b"
+  },
+  "scope": "Independent checking of the conditional implication, finite counting bound, and density transfer; not Palomar registration."
+}

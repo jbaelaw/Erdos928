@@ -38,7 +38,10 @@ with Problem 928 and the independently checked treatment of its conventions.
 The core counting and transfer proofs passed Lean 4.34.1. The complete release
 build also passed Lean 4.35.0-rc3, with only `propext`, `Classical.choice`, and
 `Quot.sound`; see [the axiom-check output](verification/lean-axioms.txt).
-The full Palomar Comparator preflight is recorded in
+The native Comparator run with `--paranoid` also passed every bundled kernel;
+see [the log](verification/comparator-paranoid.log) and
+[source hashes](verification/comparator-paranoid.json).
+The full Palomar mechanical preflight is recorded in
 [GitHub Actions](https://github.com/jbaelaw/Erdos928/actions/workflows/palomar-preflight.yml).
 Its report concerns the exact commit tested. A source build is not presented
 as a completed Palomar registration.
