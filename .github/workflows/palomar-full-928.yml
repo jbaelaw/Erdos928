@@ -1,0 +1,25 @@
+name: Palomar preflight for the complete Erdos 928 statement
+
+on:
+  push:
+    branches: [full-lean-928-20261009]
+    paths:
+      - "unconditional/**"
+      - ".github/workflows/palomar-full-928.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44
+    with:
+      repository: ${{ github.repository }}
+      commit: ${{ github.sha }}
+      pipeline_commit: d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44
+      request_id: e928full0001
+      mode: full
+      execution_profile: palomar-standard-v1
+      options: >-
+        {"project_path":"unconditional","comparator_config_path":"unconditional/comparator-full.json","formalization_metadata_path":"unconditional/formalization.yaml","authorization_relationship":"maintainer"}
