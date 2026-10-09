@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "manuscript_version": "3",
+  "version_date": "2026-10-09",
+  "language": "en",
+  "title": "Erdős Problem 928: quantitative comparisons and original formulations",
+  "author": "JI HO BAE",
+  "pages": 4,
+  "bibliography_items": 7,
+  "table": {
+    "rows": 5,
+    "columns": 3,
+    "named_formulations_and_sources": true,
+    "normalized_limits": true
+  },
+  "baseline_repository_commit": "53bebebe9c9539602b5ccdf520ce6906eabc855e",
+  "files": {
+    "erdos928_note.tex": {
+      "sha256": "13182b94422beb7b3f3c2dc1163aaa4b425a88904f6d544e81b76d0ef3ac0cc1",
+      "bytes": 16639
+    },
+    "erdos928_note.pdf": {
+      "sha256": "77ad2996db2169abd3f8f1835aa16cc4647cd7fb432db7244609d0e6534c13dd",
+      "bytes": 339552
+    }
+  },
+  "verification": {
+    "source_and_export": "Matched byte-for-byte to the reviewed English manuscript.",
+    "latex": "pdfLaTeX, TeX Live 2026; no undefined references, missing glyphs, or overfull/underfull boxes.",
+    "visual_review": "All four English pages inspected.",
+    "bilingual_consistency": "Displayed and inline mathematics, citation keys, numbering and external URLs agree with the Korean edition.",
+    "formalization_scope": "Manuscript presentation only; no Lean source changes or new formal-verification claim."
+  },
+  "preservation": "All previous manuscript versions and Lean artifacts are preserved; the version index is extended with this edition."
+}
