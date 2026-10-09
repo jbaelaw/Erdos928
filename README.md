@@ -76,7 +76,7 @@ axiom, or `native_decide`. The permitted standard axioms are `propext`,
 
 ## Production and attribution
 
-Jiho Bae directed the work. A Codex agent drafted the note and Lean code,
+JI HO BAE directed the work. A Codex agent drafted the note and Lean code,
 checked the cited source statements, and iterated against Lean diagnostics.
 No independent human peer review is claimed. The earlier informal proof used
 continuity and a squeeze argument; the final version uses the stronger finite

@@ -14,14 +14,14 @@ project:
     it is supplied in the accompanying note by OpenAI result family 012,
     Theorem 1.1. No independent proof of that analytic theorem is claimed.
   authors:
-    - "Jiho Bae"
+    - "JI HO BAE"
   responsible_maintainers:
-    - "Jiho Bae"
+    - "JI HO BAE"
   license: "Apache-2.0"
 
 sources:
   - title: "Erdős Problem 928 as a corollary of OpenAI's joint Dickman law"
-    authors: ["Jiho Bae"]
+    authors: ["JI HO BAE"]
     id: "https://github.com/jbaelaw/Erdos928/blob/main/paper/erdos928_note.pdf"
     type: "paper"
     location: "Corollary 1 and estimate (2)"
@@ -85,7 +85,7 @@ automation:
         complete Lean formalization of the note's claims.
   notes: >-
     A Codex agent drafted the mathematics, paper, and Lean implementation under
-    Jiho Bae's direction, checked references against their primary sources,
+    JI HO BAE's direction, checked references against their primary sources,
     and repaired elaboration errors. Model build identifiers and costs were
     not recorded. No separate independent agent or human review is claimed.
 
