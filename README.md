@@ -35,10 +35,13 @@ with Problem 928 and the independently checked treatment of its conventions.
 
 ## Verification status
 
-The core counting and transfer proofs passed Lean 4.34.1 with only the three
-standard axioms. The release uses Palomar-compatible Lean 4.35.0-rc3; its
-final build and the full Palomar Comparator preflight are being completed.
-A passing source build is not presented as a completed Palomar registration.
+The core counting and transfer proofs passed Lean 4.34.1. The complete release
+build also passed Lean 4.35.0-rc3, with only `propext`, `Classical.choice`, and
+`Quot.sound`; see [the axiom-check output](verification/lean-axioms.txt).
+The full Palomar Comparator preflight is recorded in
+[GitHub Actions](https://github.com/jbaelaw/Erdos928/actions/workflows/palomar-preflight.yml).
+Its report concerns the exact commit tested. A source build is not presented
+as a completed Palomar registration.
 
 ## Reproduce
 
@@ -49,7 +52,7 @@ Mathlib: `b84a70d6a5ed793cc46184160f4d4188d8c825fb`.
 lake exe cache get
 lake build
 lake env lean Check.lean
-lake comparator comparator.json
+lake comparator --config comparator.json --paranoid
 ```
 
 The submitted claims are:

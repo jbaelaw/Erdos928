@@ -1,0 +1,17 @@
+{
+  "lean": "v4.35.0-rc3",
+  "mathlib": "b84a70d6a5ed793cc46184160f4d4188d8c825fb",
+  "platform": "Linux x86_64",
+  "build_exit_code": 0,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source_sha256": {
+    "Erdos928.lean": "95325c548f6a31bd58b2d5308f4047c38069cdeb16e0760a936aa38855b35ebc",
+    "Challenge.lean": "0a4e4c139eae8a8b31494f5f5e94d15ad1302605c1d9c7741fdf6c365bce1890",
+    "Solution.lean": "ef2a31482e66a466addc872a0d94b997c1d49f816b9962520dacd6a8d95efccf"
+  },
+  "scope": "The counting estimate, density transfer, and explicit implication are compiled. This record is not the separate Comparator or Palomar report."
+}

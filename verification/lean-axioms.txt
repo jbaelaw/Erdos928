@@ -1,0 +1,5 @@
+'Erdos928.count_difference_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos928.real_count_difference_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos928.density_difference_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos928.density_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos928.problem928_of_jointDickmanLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
