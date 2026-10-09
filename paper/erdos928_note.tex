@@ -1,0 +1,98 @@
+\documentclass[11pt,a4paper]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Erdos Problem 928 as a corollary of OpenAI's joint Dickman law},
+  pdfauthor={Jiho Bae},
+  pdfsubject={An explicit implication of OpenAI's joint Dickman law}
+}
+\newtheorem{corollary}{Corollary}
+\newcommand{\N}{\mathbb N}
+\title{Erd\H{o}s Problem 928 as a corollary of\\
+OpenAI's joint Dickman law}
+\author{Jiho Bae}
+\date{October 9, 2026}
+
+\begin{document}
+\begin{abstract}
+We identify Erd\H{o}s Problem~928 as a consequence of OpenAI's joint
+Dickman law. An elementary counting estimate shows that the different
+inequality and threshold conventions do not change the natural density.
+\end{abstract}
+\maketitle
+
+Let $P(n)$ be the largest prime divisor of the integer $n\ge2$, and let
+$\rho$ denote the Dickman function. For fixed $\alpha,\beta\in(0,1)$
+and real $X\ge2$, put
+\begin{align*}
+ A_{\alpha,\beta}(X)
+   &=\#\{n\in\N:2\le n\le X,\ P(n)<n^\alpha,
+                         \ P(n+1)<(n+1)^\beta\},\\
+ B_{\alpha,\beta}(X)
+   &=\#\{n\in\N:2\le n\le X,\ P(n)\le n^\alpha,
+                         \ P(n+1)\le n^\beta\}.
+\end{align*}
+Problem~928 in Bloom's collection~\cite{Bloom928} asks whether
+$A_{\alpha,\beta}(X)/X$ has a limit, and records the predicted value
+$\rho(1/\alpha)\rho(1/\beta)$.
+
+OpenAI's joint Dickman law~\cite[Theorem~1.1, p.~2]{OpenAI2026}
+(result family~012 of its mathematics release) gives
+\begin{equation}\label{eq:JD}
+ \lim_{X\to\infty}\frac{B_{\alpha,\beta}(X)}X
+   =\rho(1/\alpha)\rho(1/\beta).
+\end{equation}
+\begin{corollary}\label{cor:928}
+The joint Dickman law \eqref{eq:JD} implies that, for every
+$\alpha,\beta\in(0,1)$,
+\[
+  \lim_{X\to\infty}\frac{A_{\alpha,\beta}(X)}X
+   =\rho(1/\alpha)\rho(1/\beta).
+\]
+\end{corollary}
+
+\begin{proof}
+An integer counted by $B_{\alpha,\beta}(X)$ but not by
+$A_{\alpha,\beta}(X)$ must satisfy $P(n)=n^\alpha$, since
+$n^\beta<(n+1)^\beta$. On this exceptional set, the map $n\mapsto P(n)$
+is injective and takes positive integer values at most $X^\alpha$.
+There are therefore at most $\lfloor X^\alpha\rfloor$ such integers.
+
+Conversely, an integer counted by $A_{\alpha,\beta}(X)$ but not by
+$B_{\alpha,\beta}(X)$ must satisfy
+\[
+ n^\beta<P(n+1)<(n+1)^\beta.
+\]
+The open intervals $(n^\beta,(n+1)^\beta)$ are pairwise disjoint as
+$n$ varies. Thus $n\mapsto P(n+1)$ is injective on this exceptional
+set, and its values are positive integers below $(X+1)^\beta$.
+Its cardinality is at most $\lfloor(X+1)^\beta\rfloor$.
+The two bounds give, for every $X\ge2$,
+\begin{equation}\label{eq:error}
+ |A_{\alpha,\beta}(X)-B_{\alpha,\beta}(X)|
+   \le \lfloor X^\alpha\rfloor+\lfloor(X+1)^\beta\rfloor.
+\end{equation}
+Dividing by $X$, the right-hand
+side tends to zero because $\alpha,\beta<1$; the conclusion follows
+from~\eqref{eq:JD}.
+\end{proof}
+
+The higher-order independence conjecture for three or more consecutive
+integers mentioned in~\cite{Bloom928} is outside the scope of this corollary.
+
+\begin{thebibliography}{9}
+\bibitem{Bloom928}
+T.~F. Bloom, \emph{Erd\H{o}s Problem \#928}, Erd\H{o}s Problems,
+\url{https://www.erdosproblems.com/928}, accessed October~9, 2026.
+
+\bibitem{OpenAI2026}
+OpenAI, \emph{The joint Dickman law for consecutive integers},
+preprint, September~24, 2026, result family~012; Theorem~1.1, p.~2.
+\href{https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf}{OpenAI Math Release},
+repository version \texttt{fd4aeeb2ee4f}.
+\end{thebibliography}
+
+\end{document}

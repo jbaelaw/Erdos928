@@ -1,0 +1,123 @@
+version: "v0.4"
+
+project:
+  name: "Erdős Problem 928 as a corollary of the joint Dickman law"
+  description: >-
+    An explicit finite counting bound compares strict shifted smoothness
+    thresholds with weak thresholds based at the same integer. For any
+    natural-valued function P and positive real a,b, the two counts through
+    real X differ by at most floor(X^a)+floor((X+1)^b). For 0<a,b<1 this
+    transfers any ordinary natural-density limit unchanged. With P the
+    largest prime factor, the formalization proves the implication from the
+    joint Dickman law to the exact two-variable statement of Erdős Problem
+    928. The analytic joint law is an explicit hypothesis of that implication;
+    it is supplied in the accompanying note by OpenAI result family 012,
+    Theorem 1.1. No independent proof of that analytic theorem is claimed.
+  authors:
+    - "Jiho Bae"
+  responsible_maintainers:
+    - "Jiho Bae"
+  license: "Apache-2.0"
+
+sources:
+  - title: "Erdős Problem 928 as a corollary of OpenAI's joint Dickman law"
+    authors: ["Jiho Bae"]
+    id: "https://github.com/jbaelaw/Erdos928/blob/main/paper/erdos928_note.pdf"
+    type: "paper"
+    location: "Corollary 1 and estimate (2)"
+    relationship: "formalizes"
+    note: "The short note accompanying this repository; no claim of worldwide priority."
+    author_endorsement: "participated"
+  - title: "The joint Dickman law for consecutive integers"
+    authors: ["OpenAI"]
+    id: "https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf"
+    type: "paper"
+    location: "Result family 012; Theorem 1.1, page 2"
+    relationship: "adapts"
+    note: >-
+      Its joint-density statement motivates the explicit premise of the final
+      implication. Its proof is neither imported nor re-proved. The new
+      counting and density-transfer arguments use Mathlib only.
+    author_endorsement: "not-contacted"
+  - title: "Erdős Problem 928"
+    authors: ["T. F. Bloom"]
+    id: "https://www.erdosproblems.com/928"
+    type: "web discussion"
+    location: "The two-variable problem statement and predicted product density"
+    relationship: "adapts"
+    note: "The higher-order generalization mentioned on the page is outside the claim."
+    author_endorsement: "not-contacted"
+
+classification:
+  arxiv: ["math.NT"]
+  msc2020: []
+
+status:
+  scope: "Complete proofs of the finite counting estimate, density transfer, and explicit conditional implication."
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+  main_results:
+    - declaration: "Erdos928.real_count_difference_bound"
+      file: "Erdos928.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+    - declaration: "Erdos928.density_transfer"
+      file: "Erdos928.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+    - declaration: "Erdos928.problem928_of_jointDickmanLaw"
+      file: "Erdos928.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+
+automation:
+  methods:
+    - method: "agent"
+      framework: "Codex"
+      tool_setup: "Lean 4, Mathlib, source inspection, and compilation on a remote Linux host."
+      prompting_notes: >-
+        The human requested an explicit, short, accurately cited note linking
+        OpenAI's theorem to Problem 928, followed by a comprehensive audit and
+        complete Lean formalization of the note's claims.
+  notes: >-
+    A Codex agent drafted the mathematics, paper, and Lean implementation under
+    Jiho Bae's direction, checked references against their primary sources,
+    and repaired elaboration errors. Model build identifiers and costs were
+    not recorded. No separate independent agent or human review is claimed.
+
+fidelity:
+  divergences: >-
+    The finite counting estimate and density transfer are proved for an
+    arbitrary natural-valued P. The final implication specializes P to
+    Nat.maxPrimeFac and leaves the density-value function rho explicit. Thus
+    the analytic joint law is a mathematical hypothesis, not a custom axiom.
+    No continuity of rho, quantitative analytic error term, or higher-order
+    independence is assumed or concluded.
+
+review:
+  status: "self-assessed"
+  notes: >-
+    Mathematical statements, quantifiers, references, and prose were checked
+    during development, and the Lean proofs were compiled with their axiom
+    dependencies inspected. This is not a claim of independent human peer
+    review. Comparator and Palomar's mechanical reports are separate evidence.
+
+alignment:
+  namespace: "Erdos928"
+  statements:
+    - source: "Estimate (2) in the note"
+      lean: "Erdos928.real_count_difference_bound"
+      module: "Erdos928"
+      status: "proved"
+    - source: "Passage from the normalized counting difference to equality of density limits"
+      lean: "Erdos928.density_transfer"
+      module: "Erdos928"
+      status: "proved"
+    - source: "Corollary 1, using the joint law as an explicit premise"
+      lean: "Erdos928.problem928_of_jointDickmanLaw"
+      module: "Erdos928"
+      status: "proved"

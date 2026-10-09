@@ -1,0 +1,49 @@
+Manuscript and reference audit -- 9 October 2026
+
+The original continuity proof was mathematically valid. The final note uses
+an elementary finite counting bound, which is stronger and requires no
+continuity of the density-value function.
+
+Mathematics checked:
+1. Both counts range over natural numbers 2 <= n <= X, with real X >= 2.
+2. A point in B but not A has P(n)=n^alpha. The positive-integer value
+   P(n) determines n uniquely because alpha>0. There are at most floor(X^alpha).
+3. A point in A but not B has n^beta<P(n+1)<(n+1)^beta. The intervals are
+   disjoint for distinct integer n because beta>0. The values are positive
+   integers below (X+1)^beta, giving the second floor bound.
+4. The two exceptional-set counts bound the absolute count difference.
+5. Normalization by X gives a quantity tending to zero for alpha,beta<1.
+6. No existence of the target density is assumed in the argument.
+7. The analytic joint-density law is an explicit premise. Three-variable
+   independence and an independent proof of that law are not claimed.
+
+Writing and structure:
+- Replaced the original title by the conventional "as a corollary" formulation.
+- Removed repeated descriptions of the convention change.
+- Made the integer domain and the ordinary real-endpoint density explicit.
+- Placed the finite estimate inside the proof of the advertised corollary.
+- Removed no mathematical qualification needed to identify the claim.
+- No worldwide-priority, breakthrough, or independent-solution claim is made.
+This is a style audit, not a forensic test of whether prose was AI-generated.
+
+References checked directly:
+[1] T. F. Bloom, Erdos Problem #928, https://www.erdosproblems.com/928,
+    accessed 9 October 2026. The exact problem and its density prediction
+    agree with the manuscript. The additional higher-order remark is distinct.
+[2] OpenAI, The joint Dickman law for consecutive integers, manuscript dated
+    24 September 2026. Theorem 1.1 is on printed page 2. Its statement has
+    weak inequalities and the base n in both thresholds. Title, author, date,
+    theorem number, page and equations were checked in the original PDF.
+    The release catalogue identifies this as family 012, officially titled
+    "Independent largest prime factors of consecutive integers".
+    The PDF link is pinned to fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb.
+No DOI, journal, acceptance status, or historical citation was invented.
+
+The note is one page. LaTeX compilation reports no warnings or unresolved
+references. The final rendered page was visually inspected for overflow,
+legibility, equations, references and page layout.
+
+The contribution is the explicit identification and proof of the implication.
+The public searches and problem discussion checks made during drafting did
+not find an earlier explicit numbering connection, but do not establish
+worldwide priority. The note does not assert that priority.
