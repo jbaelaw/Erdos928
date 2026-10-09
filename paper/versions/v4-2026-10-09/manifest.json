@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "manuscript_version": "4",
+  "version_date": "2026-10-09",
+  "language": "en",
+  "title": "Erdős Problem 928: quantitative comparisons and original formulations",
+  "author": "JI HO BAE",
+  "pages": 4,
+  "bibliography_items": 7,
+  "table": {
+    "rows": 5,
+    "columns": 3,
+    "named_formulations_and_sources": true,
+    "normalized_limits": true
+  },
+  "baseline_repository_commit": "59e82eeb337ea6dc1860e205536d8bba2f14a70e",
+  "files": {
+    "erdos928_note.tex": {
+      "sha256": "de27ca9c594e9d1e64a2457ff8d96845360a69c20b691e80e9b16ee19ab37c8b",
+      "bytes": 17480
+    },
+    "erdos928_note.pdf": {
+      "sha256": "f795fdbb593b9f2a3bf1e4c9c3e1d9f4bf7606cf535cad7fa6aef7b28f6507b0",
+      "bytes": 341217
+    }
+  },
+  "verification": {
+    "source_and_export": "Matched byte-for-byte to the reviewed English manuscript.",
+    "mathematics": "All displayed mathematical expressions and bibliography content preserved from version 3; finite comparisons and the source deductions rechecked.",
+    "prose": "Four parallel reviewers proposed English, mathematical-exposition, Korean and source-coherence edits; the coordinating reviewer integrated and rechecked the bilingual text.",
+    "latex": "Desktop compiler and pdfLaTeX / TeX Live 2026 succeeded; no undefined references, missing glyphs or overfull/underfull box warnings.",
+    "visual_review": "All four English and all four companion Korean pages inspected.",
+    "bilingual_consistency": "Displayed and inline mathematics, citation keys, numbering and external URLs agree with the Korean edition.",
+    "analytic_input": "OpenAI’s cited joint Dickman law and fixed-threshold version remain external inputs. This editorial review does not independently reverify the full upstream analytic proof.",
+    "formalization_scope": "Manuscript revision only; no Lean sources changed or new formal-verification claim."
+  },
+  "preservation": "Previous manuscript editions, existing Lean files and the separate Lean development branch are preserved."
+}

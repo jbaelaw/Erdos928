@@ -1,0 +1,402 @@
+\documentclass[11pt,a4paper]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[expansion=false]{microtype}
+\usepackage{array,booktabs,tabularx}
+\usepackage{needspace}
+\setlength{\captionindent}{0pt}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Erd\H{o}s Problem 928: quantitative comparisons and original formulations},
+  pdfauthor={JI HO BAE},
+  pdfsubject={Elementary comparison estimates and the deduction of Erd\H{o}s Problem 928 from OpenAI's joint Dickman law}
+}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}[proposition]{Corollary}
+\newcommand{\N}{\mathbb N}
+\newcommand{\A}{\mathcal A}
+\newcommand{\B}{\mathcal B}
+\newcommand{\C}{\mathcal C}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title[Erd\H{o}s Problem 928 and the joint Dickman law]{Erd\H{o}s Problem 928:\\
+quantitative comparisons and original formulations}
+\author{JI HO BAE}
+\date{October 9, 2026}
+
+\begin{document}
+\begin{abstract}
+We deduce the density formula $\rho(1/\alpha)\rho(1/\beta)$ for the
+precise formulation of Erd\H{o}s Problem~928 from OpenAI's joint
+Dickman law. Here $\rho$ is the Dickman--de Bruijn function.
+For fixed $0<\alpha,\beta<1$ and real $X\ge2$, we bound the symmetric
+difference between the counting sets in the problem and in the cited
+theorem, restricted to $2\le n\le X$, by
+$\pi(X^\alpha)+\pi((X+1)^\beta)$, where $\pi$ counts primes.
+This elementary estimate accounts for both the strict inequalities and
+the change in the second threshold from $n^\beta$ to $(n+1)^\beta$.
+We also treat the strict formulation with both thresholds based at $n$
+and compare the original statements in Erd\H{o}s's two 1976 papers and
+the 1978 Erd\H{o}s--Pomerance paper. The analytic joint law is due to
+OpenAI; this note provides the finite comparison estimates and the
+precise correspondence among the source formulations.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+
+For an integer $n\ge2$, let $P(n)$ be the largest prime factor of $n$, and set
+$P(1)=1$. Write $\rho$ for the Dickman--de Bruijn function: the continuous
+function on $[0,\infty)$ determined by
+\[
+ \rho(u)=1\quad(0\le u\le1),\qquad
+ u\rho'(u)=-\rho(u-1)\quad(u>1).
+\]
+The classical smooth-number limit is
+\begin{equation}\label{eq:marginal}
+ \lim_{X\to\infty}\frac1X
+ \#\{1\le n\le X:P(n)\le X^c\}=\rho(1/c)
+ \qquad(0<c<1);
+\end{equation}
+see de Bruijn~\cite[p.~51, (1.1)--(1.2)]{deBruijn1951}.
+We also use the standard properties $\rho(u)>0$ for finite $u\ge0$
+and $\rho(u)\to0$ as $u\to\infty$; see
+de Bruijn~\cite[p.~52, (1.8)]{deBruijn1951} together with the defining equation.
+We use $\N=\{1,2,\ldots\}$. Counting variables are integers, whereas
+the cutoff $X$ is real. Natural density is the limit of the ordinary,
+unweighted count up to $X$, divided by $X$.
+
+Problem~928 in Bloom's collection~\cite{Bloom928} asks whether, for fixed
+$\alpha,\beta\in(0,1)$, the integers satisfying
+\begin{equation}\label{eq:problem}
+ P(n)<n^\alpha,\qquad P(n+1)<(n+1)^\beta
+\end{equation}
+have a natural density. The accompanying discussion asks whether its
+value is $\rho(1/\alpha)\rho(1/\beta)$. The page cites Erd\H{o}s's
+Manitoba and Debrecen papers~\cite{Erdos1976Manitoba,Erdos1976Debrecen}
+and the paper of Erd\H{o}s and Pomerance~\cite{ErdosPomerance1978}.
+Section~\ref{sec:sources} compares their original statements.
+
+Our analytic input is OpenAI's joint Dickman
+law~\cite[Theorem~1.1, p.~2]{OpenAI2026}: for every fixed
+$\alpha,\beta\in(0,1)$,
+\begin{equation}\label{eq:JD}
+ \lim_{X\to\infty}\frac1X
+ \#\{2\le n\le X:P(n)\le n^\alpha,\ P(n+1)\le n^\beta\}
+ =\rho(1/\alpha)\rho(1/\beta).
+\end{equation}
+OpenAI presents this theorem as a resolution of the
+Erd\H{o}s--Pomerance joint Dickman conjecture. Section~11.3 of the
+same paper also establishes the versions with thresholds
+$X^\alpha,X^\beta$ and the corresponding upper-tail conditions.
+The present note connects these analytic results to the precise
+conventions in the cited sources. Proposition~\ref{prop:comparison}
+quantifies the changes needed for~\eqref{eq:problem} and for
+Erd\H{o}s's strict formulation; Section~\ref{sec:sources} explains how
+the other source statements follow.
+
+\section{Finite comparison estimates}\label{sec:comparison}
+
+Fix $\alpha,\beta\in(0,1)$. For $X\ge2$, define
+\begin{align*}
+ \A_{\alpha,\beta}(X)
+   &=\{n\in\N:2\le n\le X,\ P(n)<n^\alpha,
+                                \ P(n+1)<(n+1)^\beta\},\\
+ \B_{\alpha,\beta}(X)
+   &=\{n\in\N:2\le n\le X,\ P(n)\le n^\alpha,
+                                \ P(n+1)\le n^\beta\},\\
+ \C_{\alpha,\beta}(X)
+   &=\{n\in\N:2\le n\le X,\ P(n)<n^\alpha,
+                                \ P(n+1)<n^\beta\}.
+\end{align*}
+The sets $\A$ and $\C$ correspond, respectively, to Problem~928 and
+condition~(1) in Erd\H{o}s's Manitoba paper~\cite[p.~25]{Erdos1976Manitoba};
+$\B$ is the set counted in~\eqref{eq:JD}. Let
+$\pi(y)=\#\{p\le y:p\text{ is prime}\}$, and write
+$S\mathbin\triangle T$ for the symmetric difference of two sets.
+
+\begin{proposition}[Comparison of conventions]\label{prop:comparison}
+For every $\alpha,\beta\in(0,1)$ and every real $X\ge2$,
+\begin{align}
+ \#\bigl(\A_{\alpha,\beta}(X)\mathbin\triangle
+          \B_{\alpha,\beta}(X)\bigr)
+ &\le \pi(X^\alpha)+\pi((X+1)^\beta),\label{eq:AB}\\
+ 0\le\#\B_{\alpha,\beta}(X)-\#\C_{\alpha,\beta}(X)
+ &\le \pi(X^\alpha)+\pi(X^\beta).\label{eq:BC}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+In this proof we suppress the subscripts and the argument $X$.
+Suppose first that $n\in\B\setminus\A$. Since
+$P(n+1)\le n^\beta<(n+1)^\beta$, the second condition defining $\A$
+holds. Thus the first condition fails, giving $P(n)=n^\alpha$.
+The prime $p=P(n)\le X^\alpha$ determines the only possible value
+$n=p^{1/\alpha}$. Hence $\#(\B\setminus\A)\le\pi(X^\alpha)$.
+
+Now suppose that $n\in\A\setminus\B$. The first condition defining
+$\B$ holds, and failure of the second gives
+\[
+ n^\beta<P(n+1)<(n+1)^\beta.
+\]
+Because $\beta>0$, the intervals $(m^\beta,(m+1)^\beta)$ for integers
+$m\ge2$ are pairwise disjoint. The map $n\mapsto P(n+1)$ is therefore
+injective on $\A\setminus\B$, with values among the primes less than
+$(X+1)^\beta$. Thus $\#(\A\setminus\B)\le\pi((X+1)^\beta)$.
+Adding the two bounds proves~\eqref{eq:AB}.
+
+For the remaining comparison, $\C\subseteq\B$, and every
+$n\in\B\setminus\C$ satisfies
+$P(n)=n^\alpha$ or $P(n+1)=n^\beta$. The first equality contributes at
+most $\pi(X^\alpha)$ integers, as above. For the second equality,
+$n=P(n+1)^{1/\beta}$ is determined by a prime at most $X^\beta$,
+giving at most $\pi(X^\beta)$ integers. The union bound
+proves~\eqref{eq:BC}.
+\end{proof}
+
+\begin{corollary}[Problem~928 and Erd\H{o}s's strict formulation]\label{cor:density}
+For every fixed $\alpha,\beta\in(0,1)$,
+\begin{equation}\label{eq:conclusion}
+ \lim_{X\to\infty}\frac{\#\A_{\alpha,\beta}(X)}X
+ =\lim_{X\to\infty}\frac{\#\C_{\alpha,\beta}(X)}X
+ =\rho(1/\alpha)\rho(1/\beta).
+\end{equation}
+Thus the density in Problem~928 and the density $d(\alpha,\beta)$
+asked for in Erd\H{o}s's Manitoba paper~\cite[p.~25]{Erdos1976Manitoba}
+both exist and equal the predicted product.
+\end{corollary}
+
+\begin{proof}
+For finite sets, $|\#S-\#T|\le\#(S\mathbin\triangle T)$. Since
+$\pi(y)\le\lfloor y\rfloor$, both upper bounds in
+Proposition~\ref{prop:comparison} are $O(X^\alpha+X^\beta)=o(X)$.
+Dividing the comparison bounds by $X$ and using~\eqref{eq:JD} gives
+both limits in~\eqref{eq:conclusion}.
+\end{proof}
+
+The comparison estimates are independent of the joint Dickman law:
+they bound the discrepancy caused by the changes of convention for
+fixed $\alpha,\beta$. The asymptotic evaluation of the count comes
+from~\eqref{eq:JD}; the comparison bounds do not give a rate of
+convergence in that law.
+
+\section{Comparison with the original sources}\label{sec:sources}
+
+We call a threshold \emph{moving} if it depends on the integer being
+counted, and \emph{fixed} if it remains constant within the counting
+range. Thus $n^\alpha$ and $(n+1)^\beta$ are moving thresholds, whereas
+$X^\alpha$ and $X^\beta$ are fixed thresholds. The latter still vary
+with the counting endpoint. Put
+\[
+ a(0)=1,\qquad a(t)=1-\rho(1/t)\quad(0<t\le1).
+\]
+Table~\ref{tab:forms} places the reference theorem beside the four
+source formulations. The final column records the normalized limits
+and the results from which they follow. The subsections below explain
+the changes in inequalities, thresholds, and counting ranges.
+
+\begin{table}[htbp]
+\small
+\caption{Reference theorem and source formulations.
+In each row, $N$ counts the integers satisfying the listed conditions.
+Exponents are fixed: \mbox{$0<\alpha,\beta<1$},
+\mbox{$\gamma>1$}, and \mbox{$0\le t,s\le1$}.
+Here $c_\gamma=\rho(\gamma)$.
+Unless indicated otherwise, \mbox{$2\le n\le X$} and $X\to\infty$.}
+\label{tab:forms}
+\begin{tabularx}{\textwidth}{@{}L{43mm}L{45mm}Y@{}}
+\toprule
+Formulation and source & Conditions & Limit and justification\\
+\midrule
+\textbf{Reference theorem}\newline
+OpenAI~\cite[Thm.~1.1, p.~2]{OpenAI2026}
+ & $P(n)\le n^\alpha$\newline
+   $P(n+1)\le n^\beta$
+ & $\displaystyle\frac{N}{X}\to\rho(1/\alpha)\rho(1/\beta)$\newline
+   Joint Dickman law~\eqref{eq:JD}\\[5pt]
+\textbf{Problem~928}\newline
+Bloom~\cite{Bloom928}; Erd\H{o}s's independence statement
+\cite[p.~25]{Erdos1976Manitoba}
+ & $P(n)<n^\alpha$\newline
+   $P(n+1)<(n+1)^\beta$
+ & $\displaystyle\frac{N}{X}\to\rho(1/\alpha)\rho(1/\beta)$\newline
+   This note: Proposition~\ref{prop:comparison} and
+   Corollary~\ref{cor:density} (set $\A$)\\[5pt]
+\textbf{Erd\H{o}s's strict formulation}\newline
+Manitoba paper, condition~(1)
+\cite[p.~25]{Erdos1976Manitoba}
+ & $P(n)<n^\alpha$\newline
+   $P(n+1)<n^\beta$
+ & $\displaystyle\frac{N}{X}\to\rho(1/\alpha)\rho(1/\beta)$\newline
+   This note: Proposition~\ref{prop:comparison} and
+   Corollary~\ref{cor:density} (set $\C$)\\[5pt]
+\textbf{Fixed-threshold pair}\newline
+Erd\H{o}s (Debrecen), $r=2$
+\cite[pp.~272--273]{Erdos1976Debrecen}
+ & $P(n+1)\le k$\newline
+   $P(n+2)\le k$\newline
+   $1\le n<k^\gamma$, $k\to\infty$
+ & $\displaystyle\frac{N}{k^\gamma}\to\rho(\gamma)^2=c_\gamma^2$\newline
+   OpenAI~\cite[(11.7), p.~80]{OpenAI2026}, with the
+   change of variables in Section~\ref{subsec:debrecen}\\[5pt]
+\textbf{Fixed upper tails}\newline
+Erd\H{o}s--Pomerance~\cite[p.~311]{ErdosPomerance1978}
+ & $P(n)\ge X^t$\newline
+   $P(n+1)\ge X^s$
+ & $\displaystyle\frac{N}{X}\to a(t)a(s)$\newline
+   OpenAI~\cite[(11.8) and following paragraph, p.~80]{OpenAI2026},
+   including equality and endpoints\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Erd\H{o}s's Manitoba paper}
+On page~25 of his Manitoba paper~\cite{Erdos1976Manitoba},
+Erd\H{o}s expects independence for $P(n)<n^\alpha$ and
+$P(n+1)<(n+1)^\beta$. He then asks whether the integers satisfying
+condition~(1), namely
+$P(n)<n^\alpha$ and $P(n+1)<n^\beta$, have a density $d(\alpha,\beta)$.
+The webpage therefore follows the inequalities in the independence
+statement, while condition~(1) uses $n^\beta$ as its second threshold.
+Corollary~\ref{cor:density} establishes the density in both formulations.
+
+Erd\H{o}s also asks whether these strict inequalities have infinitely
+many solutions for each fixed pair $\alpha,\beta>0$. The positive
+value in~\eqref{eq:conclusion} gives infinitude. For parameters outside
+$(0,1)$, the same conclusion follows by choosing smaller positive
+parameters inside that interval.
+This infinitude result was already available: as recorded on Bloom's
+webpage~\cite{Bloom928}, it follows from
+Schinzel~\cite[Theorem~14, p.~231]{Schinzel1967}, applied to
+$(2n+1)^2-1=4n(n+1)$. The theorem gives a constant $K>0$ and infinitely
+many integers $n\ge3$ such that
+\[
+ P(n(n+1))\le n^{K/\log\log n}.
+\]
+Since $K/\log\log n\to0$, these integers satisfy Erd\H{o}s's strict
+inequalities for every prescribed positive pair $\alpha,\beta$, once
+$n$ is sufficiently large.
+
+\subsection{Erd\H{o}s's Debrecen paper}\label{subsec:debrecen}
+To distinguish the notation from that used above, write $\gamma>1$
+for the exponent denoted by $\alpha$ in Erd\H{o}s's Debrecen
+paper~\cite[pp.~272--273]{Erdos1976Debrecen}. Erd\H{o}s recalls that the
+number of $m\le k^\gamma$ satisfying $P(m)\le k$ is
+$(c_\gamma+o(1))k^\gamma$. He then conjectures that, for each fixed integer
+$r\ge1$, as $k$ tends to infinity through positive integers,
+\begin{equation}\label{eq:Debrecen}
+ \#\{1\le n<k^\gamma:P((n+1)\cdots(n+r))\le k\}
+  =(c_\gamma^r+o(1))k^\gamma.
+\end{equation}
+The marginal law~\eqref{eq:marginal} identifies $c_\gamma=\rho(\gamma)$.
+
+For the two-variable case, we use OpenAI's fixed-threshold
+law~\cite[(11.7), p.~80]{OpenAI2026}: for fixed $c,d\in(0,1)$,
+\begin{equation}\label{eq:fixed}
+ \lim_{X\to\infty}\frac1X
+ \#\{2\le m\le X:P(m)\le X^c,\ P(m+1)\le X^d\}
+ =\rho(1/c)\rho(1/d).
+\end{equation}
+To obtain the case $r=2$ of~\eqref{eq:Debrecen}, put $X=k^\gamma$,
+$m=n+1$, and $c=d=1/\gamma$. The identity
+$P(m(m+1))=\max\{P(m),P(m+1)\}$ makes the prime-factor conditions
+exactly those in~\eqref{eq:fixed}.
+
+After this shift, the ranges $1\le n<X$ and $2\le m\le X$ differ
+by at most one endpoint term. Its normalized contribution vanishes,
+so~\eqref{eq:fixed} gives~\eqref{eq:Debrecen} for $r=2$.
+
+Bloom's webpage~\cite{Bloom928} states a higher-order version with
+$P(n+i)\le n^\alpha$ for $0\le i<r$. Its case $r=2$ is precisely
+\eqref{eq:JD} with $\beta=\alpha$. The results used here concern two
+consecutive integers; they do not establish the assertion for $r\ge3$.
+
+\Needspace{10\baselineskip}
+\subsection{Erd\H{o}s and Pomerance}
+Erd\H{o}s and Pomerance~\cite[p.~311]{ErdosPomerance1978} formulate
+independence using fixed thresholds and upper tails. For $0\le t,s\le1$,
+they ask whether
+\begin{equation}\label{eq:upper}
+ b(t,s)=\lim_{X\to\infty}\frac1X
+ \#\{2\le n\le X:P(n)\ge X^t,\ P(n+1)\ge X^s\}
+\end{equation}
+exists, is continuous on $[0,1]^2$, and equals $a(t)a(s)$.
+Their $a(t)$ is the corresponding one-variable upper-tail limit.
+The marginal law~\eqref{eq:marginal}, with the equality cases and
+endpoints treated below, identifies their $a(t)$ with the function
+defined above.
+
+For $0<t,s<1$, apply inclusion--exclusion to~\eqref{eq:fixed} and the
+two marginal laws. This gives the limit $a(t)a(s)$ for the strict
+upper-tail conditions $P(n)>X^t$, $P(n+1)>X^s$.
+Replacing $n$ by $n+1$ in a marginal count changes its counting range
+by only $O(1)$ terms, so its limit is unchanged.
+
+Allowing equality does not change the limit. For fixed $0<t\le1$,
+equality $P(m)=X^t$ can occur only when $X^t$ is a prime $p$.
+Then $p\mid m$, so at most
+$\lfloor(X+1)/p\rfloor=O(X^{1-t}+1)=o(X)$ such $m\le X+1$ occur.
+
+At exponent $0$ the upper-tail condition is automatic for $m\ge2$.
+When just one exponent is zero, the remaining condition is evaluated
+by the marginal law. At exponent $1$, the condition $P(m)\ge X$ in
+the range $2\le m\le X+1$ forces $m\in[X,X+1]$, so at most two
+integers occur. Thus~\eqref{eq:upper} holds at all endpoints as well.
+The continuity of $\rho$, together with $\rho(1)=1$ and
+$\rho(u)\to0$ as $u\to\infty$, shows that $a$ is continuous on $[0,1]$.
+Hence $b(t,s)=a(t)a(s)$ is continuous on the whole square.
+
+OpenAI already gives this deduction, including the equality cases and
+endpoints, in~\cite[(11.8) and following paragraph, p.~80]{OpenAI2026}.
+The purpose here is to identify its exact correspondence with the
+Erd\H{o}s--Pomerance formulation~\cite{ErdosPomerance1978}. Thus all four
+source formulations in Table~\ref{tab:forms} follow from the cited
+joint Dickman law and its fixed-threshold version, through the
+comparisons above.
+
+\begin{thebibliography}{9}
+\bibitem{Bloom928}
+T.~F. Bloom, \emph{Erd\H{o}s Problem \#928},
+accessed October~9, 2026.
+\newline\url{https://www.erdosproblems.com/928}.
+
+\bibitem{deBruijn1951}
+N.~G. de Bruijn, \emph{On the number of positive integers $\le x$ and
+free of prime factors $>y$}, Nederl. Akad. Wetensch. Proc. Ser. A
+\textbf{54} (1951), 50--60.
+\newline\url{https://pure.tue.nl/ws/files/1793853/597499.pdf}.
+
+\bibitem{Erdos1976Manitoba}
+P.~Erd\H{o}s, \emph{Problems and results on number theoretic properties of
+consecutive integers and related questions}, Proceedings of the Fifth
+Manitoba Conference on Numerical Mathematics (Winnipeg, 1975), Congressus
+Numerantium XVI, Utilitas Math., Winnipeg, 1976, pp.~25--44.
+\newline\url{https://users.renyi.hu/~p_erdos/1976-39.pdf}.
+
+\bibitem{Erdos1976Debrecen}
+P.~Erd\H{o}s, \emph{Problems and results on consecutive integers}, Publ.
+Math. Debrecen \textbf{23} (1976), 271--282.
+\newline\url{https://doi.org/10.5486/PMD.1976.23.3-4.15}.
+
+\bibitem{ErdosPomerance1978}
+P.~Erd\H{o}s and C.~Pomerance, \emph{On the largest prime factors of $n$
+and $n+1$}, Aequationes Math. \textbf{17} (1978), 311--321.
+\newline\url{https://users.renyi.hu/~p_erdos/1978-29.pdf}.
+
+\bibitem{OpenAI2026}
+OpenAI, \emph{The joint Dickman law for consecutive integers}, OpenAI
+Math Release preprint, September~24, 2026, commit
+\texttt{fd4aeeb2ee4f}.
+\newline\url{https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf}.
+
+\bibitem{Schinzel1967}
+A.~Schinzel, \emph{On two theorems of Gelfond and some of their
+applications}, Acta Arith. \textbf{13} (1967), 177--236.
+\newline\url{https://doi.org/10.4064/aa-13-2-177-236}.
+\end{thebibliography}
+
+\end{document}
