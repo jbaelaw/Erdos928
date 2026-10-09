@@ -22,4 +22,4 @@ jobs:
       mode: full
       execution_profile: palomar-standard-v1
       options: >-
-        {"project_path":"unconditional","comparator_config_path":"unconditional/comparator-full.json","formalization_metadata_path":"unconditional/formalization.yaml","authorization_relationship":"maintainer"}
+        {"project_path":"unconditional","comparator_config_path":"unconditional/comparator-full.json","formalization_metadata_path":"unconditional/formalization.yaml","authorization_relationship":"I am a responsible author or maintainer"}
