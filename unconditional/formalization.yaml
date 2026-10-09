@@ -52,6 +52,47 @@ sources:
     relationship: "adapts"
     author_endorsement: "not-contacted"
 
+related_formalizations:
+  - id: "https://github.com/openai/math/tree/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean"
+    relationship: "builds-on"
+    note: >-
+      OpenAI's joint Dickman proof, result family 012, supplies the analytic
+      theorem OAI.JointDickmanPaper.joint_law. Its required import closure is
+      vendored and ported from Lean 4.34.1 to 4.35.0-rc3. The analytic proof
+      is credited to OpenAI; this project adds the strict shifted-threshold
+      conclusion and a Mathlib-only Challenge statement. Exact source hashes,
+      the official dependency patches, and compatibility repairs are recorded
+      in vendor/source-manifest.json and vendor/compatibility-repairs.json.
+  - id: "https://github.com/jbaelaw/Erdos928/tree/8cd4a3f82b22000c860560b6c090e4ac585e8f03"
+    relationship: "builds-on"
+    note: >-
+      The earlier conditional development supplies the finite counting bound
+      and density transfer in ConventionTransfer.lean. The present result
+      discharges its joint-law premise using the cited OpenAI Lean proof.
+      The earlier development and its separate Comparator configuration remain
+      in the repository.
+  - id: "https://github.com/AlexKontorovich/PrimeNumberTheoremAnd/tree/c39a751132c88b6e8080b74c74023fd95b3d8be0"
+    relationship: "adapts"
+    note: >-
+      The required dependency modules are vendored with OpenAI's pinned
+      PrimeNumberTheoremAnd-lean4341.patch and the documented Lean 4.35 port.
+  - id: "https://github.com/math-inc/strongpnt/tree/2f5835c322314f55f1026ec2f139d704b7c45c69"
+    relationship: "adapts"
+    note: >-
+      The required dependency modules are vendored with OpenAI's pinned
+      StrongPNT-lean4341.patch and the documented Lean 4.35 port.
+  - id: "https://github.com/hanwenzhu/LeanArchitect/tree/468e8f58fb4ad6e6ad672a08da6d0d0531e95a97"
+    relationship: "builds-on"
+    note: >-
+      Required proof-development infrastructure is vendored at this revision.
+      Its original autoImplicit setting is preserved for its library only.
+  - id: "https://github.com/leanprover-community/mathlib4/blob/d13f23b723b8a846827a245b89c10fc7d3f11612/Mathlib/Tactic/LinearCombinationPrime.lean"
+    relationship: "builds-on"
+    note: >-
+      This legacy tactic module is preserved unchanged under the distinct
+      Erdos928Compat.LinearCombinationPrime module name. It does not replace
+      or shadow a module in the selected canonical Mathlib dependency.
+
 classification:
   arxiv: ["math.NT"]
   msc2020: []
