@@ -1,0 +1,213 @@
+[
+  {
+    "path": "upstream/PrimeNumberTheoremAnd/Erdos970/EulerMaclaurin.lean",
+    "reason": "Import the measurable-floor lemmas explicitly; fun_prop no longer receives them through AbelSummation.",
+    "before_sha256": "abba29e231ebaa7765caedf24288471cec123fcedba5191863113d8d84097010",
+    "after_sha256": "88d1cce88ad2951f6177fc5792b24ba3116ade2a8c33f8f00585ba98763c8c50",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/PrimeNumberTheoremAnd/Erdos970/MertensClassical.lean",
+    "reason": "Use the current logarithmic-integrability module path.",
+    "before_sha256": "da395242cc8fdfc70cf50ec2d876d05bc1844782454b12a6af3cc4e48e3b7a91",
+    "after_sha256": "40f691a04e8b57d174c2c5fa0a57699c4315154b0eda0fa9890280bcef9188cc",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/OAI/NumberTheory/JointDickman/Amplification/MultiplicityRates.lean",
+    "reason": "Rewrite binary entropy by its public identity instead of unfolding an opaque definition.",
+    "before_sha256": "307aa430566b339ae7e3b3a554aace7cbfe32a49fcd7cade94b2f3799a6f0032",
+    "after_sha256": "b1737fc18e4966076d2d76549e828e64dac9adec1f5df1f6a34a3cef31a74c1c",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/OAI/NumberTheory/JointDickman/Amplification/SubsetCardEntropy.lean",
+    "reason": "Rewrite binary entropy by its public identity instead of unfolding an opaque definition.",
+    "before_sha256": "68953c45d9ba5affd4956cb0bc57d2c3610410259a95a6c9a35fece10ca6efed",
+    "after_sha256": "63ce43ca41862cab09ed36d62aaa84912d286b2421f4675bc34d824d72d3e514",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/OAI/NumberTheory/JointDickman/Amplification/OmissionEntropy.lean",
+    "reason": "Rewrite binary entropy by its public identity instead of unfolding an opaque definition.",
+    "before_sha256": "58a41024f163a39e85cd567388f340f753a153c40691c173fa062bee0181ad83",
+    "after_sha256": "aff95d5581a438f82f379fa0d1aebe2c942a781441c3a0dfe8760ce6c977121f",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/OAI/NumberTheory/JointDickman/Amplification/MultiplicityRates.lean",
+    "batch": 2,
+    "reason": "Remove a now-redundant simplification after the public entropy identity.",
+    "before_sha256": "b1737fc18e4966076d2d76549e828e64dac9adec1f5df1f6a34a3cef31a74c1c",
+    "after_sha256": "1c30404041a464f45c1f65a28b62be592c4334a186bbe8c5993e4219725e2edc",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/OAI/NumberTheory/JointDickman/Amplification/SubsetCardEntropy.lean",
+    "batch": 2,
+    "reason": "Remove the unused inverse-log simplification.",
+    "before_sha256": "63ce43ca41862cab09ed36d62aaa84912d286b2421f4675bc34d824d72d3e514",
+    "after_sha256": "89ef8b86522bfb15dd11e42e9d4649af351fe4210117b750a5548e64159e3f96",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/OAI/NumberTheory/JointDickman/Amplification/OmissionEntropy.lean",
+    "batch": 2,
+    "reason": "Remove the unused inverse-log simplification.",
+    "before_sha256": "aff95d5581a438f82f379fa0d1aebe2c942a781441c3a0dfe8760ce6c977121f",
+    "after_sha256": "7853cb7ff43a4a3f73c8858bbb9843d8d953908b0373c5fc298274da1ea975a9",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/PrimeNumberTheoremAnd/Erdos970/MertensClassical.lean",
+    "batch": 2,
+    "reason": "Import the natural-floor division theorem explicitly. Supply the weaker null-measurability hypothesis required by the current theorem.",
+    "before_sha256": "40f691a04e8b57d174c2c5fa0a57699c4315154b0eda0fa9890280bcef9188cc",
+    "after_sha256": "5c39b902395fceb56c54c8cbb3e774f494feddab169b2dcb26e4a00b31ddc30d",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/PrimeNumberTheoremAnd/Erdos970/MellinCalculus.lean",
+    "batch": 2,
+    "reason": "Supply null-measurability explicitly to the current piecewise integrability theorem.",
+    "before_sha256": "07b373200ea0286cac293cb7b7c42f198e94ae727b4db2329995a620ad6f5d3f",
+    "after_sha256": "64ea4dc7926ff3cc83c4e568af9ae8610d9aad628d1a286e01ce97e0cb63ce44",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/StrongPNT/Erdos970/PNT1_ComplexAnalysis.lean",
+    "batch": 2,
+    "reason": "Use the public positivity theorem instead of unfolding the opaque complex norm.",
+    "before_sha256": "b9383cbbecc08f473f2dcc6667af9f910de76078e4ab66d4217beffe9ab92dff",
+    "after_sha256": "9cbed0039991a45e9aa4d7afc9b5aee650653ee229aa5ba9140bdac9fc700217",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/OAI/NumberTheory/TwoPointCorrelations/MRTCorrectionEuler.lean",
+    "batch": 2,
+    "reason": "Import the public nonnegative-indicator theorem explicitly.",
+    "before_sha256": "46467459e7ae220bcf216dc98283112fa77126aa3ce8183bdcbc6a1eb13edc59",
+    "after_sha256": "2f16d1217c3081676c68d9070880e1dcfdad4d50938e8ffab2fb0138e77d472d",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/PrimeNumberTheoremAnd/Erdos970/Tactic/AdditiveCombination.lean",
+    "batch": 2,
+    "reason": "Use the pinned legacy equality-only tactic API from the explicit compatibility module.",
+    "before_sha256": "3914c19e81c4007c41c3cbeb5445ea736e11e16d4415aed7863756f94e2ec057",
+    "after_sha256": "e2d31dc3520fcbc90a50607ad55334bf56402f8eafaf3b4852a84fc6b386ee9d",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/PrimeNumberTheoremAnd/Tactic/AdditiveCombination.lean",
+    "batch": 2,
+    "reason": "Use the pinned legacy equality-only tactic API from the explicit compatibility module.",
+    "before_sha256": "0c2e7c166052fe45e55d195424fb87c66b3c542b42a2041b1169eba845a18486",
+    "after_sha256": "d268f8e28d35bc35416a9916e43bd637cf1d77433618a0cbe6cc178058c3e899",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/PrimeNumberTheoremAnd/EulerMaclaurin.lean",
+    "batch": 3,
+    "reason": "Import floor measurability explicitly in the non-namespaced upstream version too.",
+    "before_sha256": "a1def4a9f8f0b36864c5d480db137c1d86be3db1a47b67ae151e587a99167146",
+    "after_sha256": "349a2be84b697c6262f57c61a91e739c9d78f45ba73751a1404a21a29e7b6f48",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/PrimeNumberTheoremAnd/Mathlib/Analysis/Asymptotics/Asymptotics.lean",
+    "batch": 3,
+    "reason": "Import the norm and natural-cast limit results explicitly.",
+    "before_sha256": "82b1e14903a7ef7cb394919417842a6a928a5238a3feba420478dd87474e7752",
+    "after_sha256": "607cd35eace81dfc1fe7144d885a5fae758cddbf3c57ab5781219cc829d36427",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/PrimeNumberTheoremAnd/Wiener.lean",
+    "batch": 3,
+    "reason": "Import the polynomial little-o comparison explicitly.",
+    "before_sha256": "ff55024dd0d03b7dcb908d6ec1e4a2d5c5fe47f534fb6dc9fb936066cde5c817",
+    "after_sha256": "7efd18273264d3a868a9c645a5c293fc77608fae16c64f3fe7944e39f06893c6",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/OAI/NumberTheory/Jacobsthal/Sieve/EulerProductRatio.lean",
+    "batch": 3,
+    "reason": "Raise the elaboration budget for the existing proof after a deterministic 200000-heartbeat timeout.",
+    "before_sha256": "a07978bf27d1b2b1fef92e1b1a4f848d1b6d7e2ce1cca34f303874d753b607d1",
+    "after_sha256": "525491befa054480f74f39557ad636b9a17289b80c54f8049dbb9c08b4daf595",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/PrimeNumberTheoremAnd/Erdos970/Tactic/AdditiveCombination.lean",
+    "batch": 4,
+    "reason": "Mark the tactic implementation as meta to match the imported legacy elaborator API.",
+    "before_sha256": "e2d31dc3520fcbc90a50607ad55334bf56402f8eafaf3b4852a84fc6b386ee9d",
+    "after_sha256": "14f7b78e9706563437142e525d413b8b078b213ccaa85b1db865d961eaa82a5a",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/PrimeNumberTheoremAnd/Tactic/AdditiveCombination.lean",
+    "batch": 4,
+    "reason": "Mark the tactic implementation as meta to match the imported legacy elaborator API.",
+    "before_sha256": "d268f8e28d35bc35416a9916e43bd637cf1d77433618a0cbe6cc178058c3e899",
+    "after_sha256": "e5e92d70bc5109c987afd6567868cc94ffe72d95df49f38c92e131aa94bf5231",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/PrimeNumberTheoremAnd/Erdos970/ZetaBounds.lean",
+    "batch": 5,
+    "reason": "Import complex p-series summability explicitly; this also resolves the downstream rewrite using that theorem.",
+    "before_sha256": "5a7b0770724fc8cc4ddebcbca3d4a564356da1b5de92385d944e54158899ba01",
+    "after_sha256": "925656a2e01957310a2ff609f57dceb67d72d1ff4fcea36bdaa111deecea69f5",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/PrimeNumberTheoremAnd/ZetaBounds.lean",
+    "batch": 5,
+    "reason": "Import complex p-series summability explicitly; this also resolves the downstream rewrite using that theorem.",
+    "before_sha256": "14feb696468fc7503c00a8243d51f93bf96de4c25a0e7d76aba2e277abd9f95b",
+    "after_sha256": "a0dcd21bfb66931cf18100924340f9ec56c03ba9164d6a0f4a61daee4d92d292",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/PrimeNumberTheoremAnd/PerronFormula.lean",
+    "batch": 5,
+    "reason": "Use the public complex-norm identity before the square-root comparison, instead of relying on unfolding an opaque norm.",
+    "before_sha256": "f57073a94de2b5ab626cd628e24b821c0e75f10b6b0d1d33f18993106c7ef9c4",
+    "after_sha256": "7277bd08bb3ea0262f0ae5619c428d017bf8274806724bebcd5d228ff9ab984a",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  },
+  {
+    "path": "upstream/StrongPNT/Erdos970/PNT5_Strong.lean",
+    "batch": 6,
+    "reason": "Rewrite the unordered integration interval by its public equality instead of relying on convert producing a set-equality goal.",
+    "before_sha256": "f7d121c583f3661435362415f9356c3b4d16ab9b483ba6ab861c9ea427d9c10f",
+    "after_sha256": "c314f6c920ae8e3a2d4d84a6cf1f2bd0e4ce9bc34e7c36b2f9f3a1d6eea7d101",
+    "theorem_statements_changed": false,
+    "validation": "Compiled successfully in the full project; the final exported claims passed every bundled Comparator kernel."
+  }
+]

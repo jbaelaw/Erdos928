@@ -1,0 +1,106 @@
+--- a/upstream/OAI/NumberTheory/JointDickman/Amplification/MultiplicityRates.lean
++++ b/upstream/OAI/NumberTheory/JointDickman/Amplification/MultiplicityRates.lean
+@@ -24,7 +24,6 @@
+   rw [Real.binEntropy_eq_negMulLog_add_negMulLog_one_sub]
+   simp only [Real.negMulLog_def]
+   rw [hlog,show 2*((1/2 : ℝ)-r) = 1-2*r by ring]
+-  simp only [Real.log_inv]
+   ring
+ 
+ /-- A clamped exponential parameter handles the endpoint u=0 without an
+--- a/upstream/OAI/NumberTheory/JointDickman/Amplification/SubsetCardEntropy.lean
++++ b/upstream/OAI/NumberTheory/JointDickman/Amplification/SubsetCardEntropy.lean
+@@ -77,7 +77,7 @@
+   have hθn : θ*(P.card : ℝ) = k := div_mul_cancel₀ _ hnr.ne'
+   change _ = (P.card : ℝ)*Real.binEntropy θ
+   simp only [Real.binEntropy_eq_negMulLog_add_negMulLog_one_sub,
+-    Real.negMulLog_def,Real.log_inv,t]
++    Real.negMulLog_def,t]
+   rw [← hθn]
+   ring
+ 
+--- a/upstream/OAI/NumberTheory/JointDickman/Amplification/OmissionEntropy.lean
++++ b/upstream/OAI/NumberTheory/JointDickman/Amplification/OmissionEntropy.lean
+@@ -41,7 +41,7 @@
+       rw [hlog]
+       congr 1
+       simp only [t,Real.binEntropy_eq_negMulLog_add_negMulLog_one_sub,
+-        Real.negMulLog_def,Real.log_inv]
++        Real.negMulLog_def]
+       ring
+ 
+ /-- On each endpoint the higher omissions cost an entropy exponent tending
+--- a/upstream/PrimeNumberTheoremAnd/Erdos970/MertensClassical.lean
++++ b/upstream/PrimeNumberTheoremAnd/Erdos970/MertensClassical.lean
+@@ -1,6 +1,7 @@
+ module
+ 
+ public import Mathlib.Algebra.Order.Field.GeomSum
++public import Mathlib.Algebra.Order.Floor.Semifield
+ public import Mathlib.Analysis.SumIntegralComparisons
+ public import Mathlib.NumberTheory.Chebyshev
+ public import Mathlib.NumberTheory.Harmonic.EulerMascheroni
+@@ -1129,7 +1130,7 @@
+         (volume.restrict (Set.Ioi (1:ℝ)))
+       ↔ MeasureTheory.IntegrableOn ((Set.Ici (d:ℝ)).indicator fun x => x ^ (-s))
+           (Set.Ioi (1:ℝ)) volume from Iff.rfl,
+-      MeasureTheory.integrableOn_indicator_iff measurableSet_Ici]
++      MeasureTheory.integrableOn_indicator_iff measurableSet_Ici.nullMeasurableSet]
+     apply MeasureTheory.IntegrableOn.mono_set
+       (integrableOn_Ioi_rpow_of_lt (by linarith : (-s:ℝ) < -1) (by norm_num : (0:ℝ) < 1/2))
+     intro x hx
+--- a/upstream/PrimeNumberTheoremAnd/Erdos970/MellinCalculus.lean
++++ b/upstream/PrimeNumberTheoremAnd/Erdos970/MellinCalculus.lean
+@@ -820,7 +820,7 @@
+         have hy : y ∉ Icc (2 ^ (-ε)) (2 ^ ε) := by
+           simp only [mem_Icc, not_and, not_le]; exact hS hz.1 <| (div_le_one hz.2).mp hxy
+         simp [DeltaSpikeSupport εpos hz.2.le suppν hy]
+-    · apply Integrable.piecewise Smeas ?_ integrableOn_zero
++    · apply Integrable.piecewise Smeas.nullMeasurableSet ?_ integrableOn_zero
+       simp only [IntegrableOn, Measure.restrict_restrict_of_subset SsubI]
+       apply MeasureTheory.Integrable.mono_measure ?_
+       · apply MeasureTheory.Measure.restrict_mono' SsubT.eventuallyLE le_rfl
+--- a/upstream/StrongPNT/Erdos970/PNT1_ComplexAnalysis.lean
++++ b/upstream/StrongPNT/Erdos970/PNT1_ComplexAnalysis.lean
+@@ -177,8 +177,7 @@
+ 
+ lemma lem_abspos (z : ℂ) : z ≠ 0 → norm z > 0 := by
+   intro h_ne_zero
+-  apply Real.sqrt_pos.mpr
+-  exact Complex.normSq_pos.mpr h_ne_zero
++  exact norm_pos_iff.mpr h_ne_zero
+ 
+ lemma lem_real_part_lower_bound5 (w : ℂ) (M : ℝ) (hM : M > 0) (h : w.re ≤ M) : norm (2 * M - w) > 0 := by
+   apply lem_abspos
+--- a/upstream/OAI/NumberTheory/TwoPointCorrelations/MRTCorrectionEuler.lean
++++ b/upstream/OAI/NumberTheory/TwoPointCorrelations/MRTCorrectionEuler.lean
+@@ -2,6 +2,7 @@
+ 
+ public import OAI.NumberTheory.TwoPointCorrelations.MRTMultiplicativeReduction
+ public import Mathlib.NumberTheory.EulerProduct.Basic
++public import Mathlib.Algebra.Order.Group.Indicator
+ public import Mathlib.Analysis.PSeries
+ public import Mathlib.Topology.Algebra.InfiniteSum.Real
+ 
+--- a/upstream/PrimeNumberTheoremAnd/Erdos970/Tactic/AdditiveCombination.lean
++++ b/upstream/PrimeNumberTheoremAnd/Erdos970/Tactic/AdditiveCombination.lean
+@@ -1,7 +1,7 @@
+ module
+ 
+ public import Mathlib.Tactic.Abel
+-public import Mathlib.Tactic.LinearCombinationPrime
++public import Erdos928Compat.LinearCombinationPrime
+ 
+ @[expose] public section
+ 
+--- a/upstream/PrimeNumberTheoremAnd/Tactic/AdditiveCombination.lean
++++ b/upstream/PrimeNumberTheoremAnd/Tactic/AdditiveCombination.lean
+@@ -6,7 +6,7 @@
+ Authors: Abby J. Goldberg, Mario Carneiro, Heather Macbeth
+ -/
+ public import Mathlib.Tactic.Abel
+-public import Mathlib.Tactic.LinearCombinationPrime
++public import Erdos928Compat.LinearCombinationPrime
+ 
+ @[expose] public section
+ 

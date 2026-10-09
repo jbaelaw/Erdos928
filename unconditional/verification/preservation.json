@@ -1,0 +1,101 @@
+{
+  "baseline_commit": "53bebebe9c9539602b5ccdf520ce6906eabc855e",
+  "unchanged_files": [
+    {
+      "path": ".github/workflows/palomar-preflight.yml",
+      "sha256": "a3840025c7a7d06c12a57fc41f5a3745c64830020e543232a5ad0075e0a5ff49"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "31920a13838ed954138d92711e515a79b098e333c816f6c8d354aa8a1cb21e27"
+    },
+    {
+      "path": "Challenge.lean",
+      "sha256": "0a4e4c139eae8a8b31494f5f5e94d15ad1302605c1d9c7741fdf6c365bce1890"
+    },
+    {
+      "path": "Check.lean",
+      "sha256": "edc9d21457410cc34097b324d7375e14ff1f37fe1dbd404110eb8cbb6fad7cc5"
+    },
+    {
+      "path": "Erdos928.lean",
+      "sha256": "95325c548f6a31bd58b2d5308f4047c38069cdeb16e0760a936aa38855b35ebc"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "Solution.lean",
+      "sha256": "ef2a31482e66a466addc872a0d94b997c1d49f816b9962520dacd6a8d95efccf"
+    },
+    {
+      "path": "comparator.json",
+      "sha256": "efc1dbbbba1758699e6acd89a036735a3aa7ecbe6ace4169e92522df0bab4f4b"
+    },
+    {
+      "path": "formalization.yaml",
+      "sha256": "d1d837670e4abf1d39cb9158853c5275711832785fe26520c510833a2ac6c193"
+    },
+    {
+      "path": "lake-manifest.json",
+      "sha256": "9354586bccf3be963b64d00cc90fcd8a92504e9d135e32c127540dd85669c48c"
+    },
+    {
+      "path": "lakefile.toml",
+      "sha256": "fba5836265ba085c6553b689af94fb58c1b86477ac8b97f13adc9ad8105601f9"
+    },
+    {
+      "path": "lean-toolchain",
+      "sha256": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47"
+    },
+    {
+      "path": "paper/erdos928_note.pdf",
+      "sha256": "53c1d1c1e84c597fa38f8441df238486f1dd4500a3819a110ea5bbfebbc0f0ff"
+    },
+    {
+      "path": "paper/erdos928_note.tex",
+      "sha256": "fa7b190bb47cf2e9a2a1cfbec803b6ecb7a9ca7c403de976a08087973efb6fe4"
+    },
+    {
+      "path": "paper/source_audit.txt",
+      "sha256": "a6dbb5b74381da101cfedef27e7a2e4625c618c6f6dc8950907728a0cae9f82a"
+    },
+    {
+      "path": "paper/versions/v2-2026-10-09/README.md",
+      "sha256": "a84fc42ca35d1b6fd510815174d2ec75ed2eed7a0bba74509f26014199fe372d"
+    },
+    {
+      "path": "paper/versions/v2-2026-10-09/erdos928_note.pdf",
+      "sha256": "8270692dae350c05cd1611693ff4764997c0c91b035e1ba801a2638973a365d1"
+    },
+    {
+      "path": "paper/versions/v2-2026-10-09/erdos928_note.tex",
+      "sha256": "b9518b15ec4f1aa1234dc251191d49b855d0aa7f8e395086ef57d5782bc308f8"
+    },
+    {
+      "path": "paper/versions/v2-2026-10-09/manifest.json",
+      "sha256": "31cdf9b57f33b28559e252449163b7afa562e096c06dd58cc226ac2a48a62c1b"
+    },
+    {
+      "path": "verification/comparator-paranoid.json",
+      "sha256": "99b8a452b45ed8d841db4a0fea669c23537ac126eec4ca4b0840458d92366cb6"
+    },
+    {
+      "path": "verification/comparator-paranoid.log",
+      "sha256": "9cb9607ed8c62d4bc00056cd6f80e80a496baa5a38d01fbb65acdce3c8dc439a"
+    },
+    {
+      "path": "verification/lean-axioms.txt",
+      "sha256": "9e2bbb31e9c5014d66a60ffb8667a5b1f8da7b6799c17a81c1cbe244c752b4a7"
+    },
+    {
+      "path": "verification/local-build.json",
+      "sha256": "df55b0b626fe258fd1e91136d6b5df5b2a0df5cfa493d9d0417d95953ea760a1"
+    }
+  ],
+  "navigation_files_updated": [
+    "README.md",
+    "paper/versions/README.md"
+  ]
+}

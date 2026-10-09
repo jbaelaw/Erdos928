@@ -1,0 +1,78 @@
+Resolving dependencies
+Building FullChallenge
+⚠ [9015/9016] Built FullChallenge (4.5s)
+warning: FullChallenge.lean:37:8: declaration uses `sorry`
+warning: FullChallenge.lean:47:8: declaration uses `sorry`
+Build completed successfully (9016 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, Erdos928.erdos_928_density_exists, Erdos928.erdos_928_with_dickman_specification, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from FullChallenge
+Building FullSolution
+⚠ [9961/10191] Replayed PrimeNumberTheoremAnd.Erdos970.ZetaBounds
+warning: vendor/upstream/PrimeNumberTheoremAnd/Erdos970/ZetaBounds.lean:2821:41: `ENNReal.addLECancellable_iff_ne` has been deprecated: Use `ENNReal.addLECancellable_iff_ne_top` instead
+
+Hint: Replace the deprecated name:
+  ENNReal.addLECancellable_iff_ne_̲t̲o̲p̲
+warning: vendor/upstream/PrimeNumberTheoremAnd/Erdos970/ZetaBounds.lean:2876:41: `ENNReal.addLECancellable_iff_ne` has been deprecated: Use `ENNReal.addLECancellable_iff_ne_top` instead
+
+Hint: Replace the deprecated name:
+  ENNReal.addLECancellable_iff_ne_̲t̲o̲p̲
+⚠ [10172/10854] Replayed PrimeNumberTheoremAnd.ZetaBounds
+warning: vendor/upstream/PrimeNumberTheoremAnd/ZetaBounds.lean:3515:41: `ENNReal.addLECancellable_iff_ne` has been deprecated: Use `ENNReal.addLECancellable_iff_ne_top` instead
+
+Hint: Replace the deprecated name:
+  ENNReal.addLECancellable_iff_ne_̲t̲o̲p̲
+warning: vendor/upstream/PrimeNumberTheoremAnd/ZetaBounds.lean:3570:41: `ENNReal.addLECancellable_iff_ne` has been deprecated: Use `ENNReal.addLECancellable_iff_ne_top` instead
+
+Hint: Replace the deprecated name:
+  ENNReal.addLECancellable_iff_ne_̲t̲o̲p̲
+ℹ [10275/10854] Replayed ConventionTransfer
+info: ConventionTransfer.lean:253:0: 'Erdos928.count_difference_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConventionTransfer.lean:254:0: 'Erdos928.real_count_difference_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConventionTransfer.lean:255:0: 'Erdos928.density_difference_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConventionTransfer.lean:256:0: 'Erdos928.density_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConventionTransfer.lean:257:0: 'Erdos928.problem928_of_jointDickmanLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [10462/10854] Replayed StrongPNT.Erdos970.PNT3_RiemannZeta
+warning: vendor/upstream/StrongPNT/Erdos970/PNT3_RiemannZeta.lean:222:44: This simp argument is unused:
+  norm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp at habs1lt
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: vendor/upstream/StrongPNT/Erdos970/PNT3_RiemannZeta.lean:325:38: This simp argument is unused:
+  norm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [10466/10854] Replayed StrongPNT.Erdos970.PNT5_Strong
+warning: vendor/upstream/StrongPNT/Erdos970/PNT5_Strong.lean:1224:82: `ENNReal.addLECancellable_iff_ne` has been deprecated: Use `ENNReal.addLECancellable_iff_ne_top` instead
+
+Hint: Replace the deprecated name:
+  ENNReal.addLECancellable_iff_ne_̲t̲o̲p̲
+warning: vendor/upstream/StrongPNT/Erdos970/PNT5_Strong.lean:1316:82: `ENNReal.addLECancellable_iff_ne` has been deprecated: Use `ENNReal.addLECancellable_iff_ne_top` instead
+
+Hint: Replace the deprecated name:
+  ENNReal.addLECancellable_iff_ne_̲t̲o̲p̲
+Build completed successfully (10854 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, Erdos928.erdos_928_density_exists, Erdos928.erdos_928_with_dickman_specification, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from FullSolution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean paranoid kernel on solution
+Lean paranoid kernel accepts the solution
+Running lean4lean kernel on solution
+checked 88124 declarations
+lean4lean kernel accepts the solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running con-leche kernel on solution
+con-leche: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)
+con-leche: accepted 88123 declarations (--verified)
+con-leche kernel accepts the solution
+Running con-ron kernel on solution
+con-ron: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)
+con-ron: accepted 88123 declarations (--verified)
+con-ron kernel accepts the solution
+Running Lean default kernel on solution
+Lean default kernel accepts the solution
+Your solution is okay!

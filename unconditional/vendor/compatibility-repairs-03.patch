@@ -1,0 +1,41 @@
+--- a/upstream/PrimeNumberTheoremAnd/EulerMaclaurin.lean
++++ b/upstream/PrimeNumberTheoremAnd/EulerMaclaurin.lean
+@@ -1,6 +1,7 @@
+ module
+ 
+ public import Mathlib.NumberTheory.AbelSummation
++public import Mathlib.MeasureTheory.Function.Floor
+ 
+ /-! We prove the 1st order Euler-Maclaurin formula by specialising Abel summation and manipulating integrals. -/
+ 
+--- a/upstream/PrimeNumberTheoremAnd/Mathlib/Analysis/Asymptotics/Asymptotics.lean
++++ b/upstream/PrimeNumberTheoremAnd/Mathlib/Analysis/Asymptotics/Asymptotics.lean
+@@ -1,6 +1,8 @@
+ module
+ 
+ public import Mathlib.Analysis.Asymptotics.Lemmas
++public import Mathlib.Analysis.Normed.Group.Bounded
++public import Mathlib.Order.Filter.AtTopBot.Archimedean
+ public import Mathlib.Topology.Order.Compact
+ 
+ @[expose] public section
+--- a/upstream/PrimeNumberTheoremAnd/Wiener.lean
++++ b/upstream/PrimeNumberTheoremAnd/Wiener.lean
+@@ -8,6 +8,7 @@
+ public import Mathlib.Analysis.Fourier.RiemannLebesgueLemma
+ public import Mathlib.Analysis.Normed.Group.Tannery
+ public import Mathlib.Analysis.SumIntegralComparisons
++public import Mathlib.Analysis.Asymptotics.SpecificAsymptotics
+ public import Mathlib.NumberTheory.Chebyshev
+ public import Mathlib.NumberTheory.LSeries.PrimesInAP
+ public import Mathlib.NumberTheory.MulChar.Lemmas
+--- a/upstream/OAI/NumberTheory/Jacobsthal/Sieve/EulerProductRatio.lean
++++ b/upstream/OAI/NumberTheory/Jacobsthal/Sieve/EulerProductRatio.lean
+@@ -99,6 +99,7 @@
+   have hh := congrArg (ZMod.castHom htM (ZMod t)) (ZMod.natCast_zmod_val (n : ZMod M))
+   simpa only [map_natCast,map_intCast] using hh
+ 
++set_option maxHeartbeats 800000 in
+ theorem int_mem_primeResidueSet (P : Finset ℕ) (hP : ∀ p ∈ P,p.Prime)
+     (E : ∀ p : ℕ,Finset (ZMod p)) (n : ℤ) :
+     (n : ZMod (∏ p ∈ P,p)) ∈ primeResidueSet P hP E ↔ ∀ p ∈ P,(n : ZMod p) ∈ E p := by

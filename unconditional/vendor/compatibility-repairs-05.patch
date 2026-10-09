@@ -1,0 +1,48 @@
+--- a/upstream/PrimeNumberTheoremAnd/Erdos970/ZetaBounds.lean
++++ b/upstream/PrimeNumberTheoremAnd/Erdos970/ZetaBounds.lean
+@@ -5,6 +5,7 @@
+ public import Mathlib.MeasureTheory.Order.Group.Lattice
+ public import Mathlib.NumberTheory.Harmonic.Bounds
+ public import Mathlib.NumberTheory.LSeries.Nonvanishing
++public import Mathlib.Analysis.PSeriesComplex
+ public import PrimeNumberTheoremAnd.Erdos970.Auxiliary
+ public import PrimeNumberTheoremAnd.Erdos970.Fourier
+ public import PrimeNumberTheoremAnd.Erdos970.Mathlib.Analysis.SpecialFunctions.Log.Basic
+--- a/upstream/PrimeNumberTheoremAnd/ZetaBounds.lean
++++ b/upstream/PrimeNumberTheoremAnd/ZetaBounds.lean
+@@ -6,6 +6,7 @@
+ public import Mathlib.MeasureTheory.Order.Group.Lattice
+ public import Mathlib.NumberTheory.Harmonic.Bounds
+ public import Mathlib.NumberTheory.LSeries.Nonvanishing
++public import Mathlib.Analysis.PSeriesComplex
+ public import PrimeNumberTheoremAnd.Auxiliary
+ public import PrimeNumberTheoremAnd.Fourier
+ public import PrimeNumberTheoremAnd.Mathlib.Analysis.SpecialFunctions.Log.Basic
+--- a/upstream/PrimeNumberTheoremAnd/PerronFormula.lean
++++ b/upstream/PrimeNumberTheoremAnd/PerronFormula.lean
+@@ -1,6 +1,7 @@
+ module
+ 
+ public import Architect
++public import Mathlib.Analysis.Complex.Norm
+ public import Mathlib.Analysis.Calculus.ContDiff.Basic
+ public import Mathlib.MeasureTheory.Integral.Asymptotics
+ public import PrimeNumberTheoremAnd.Mathlib.Analysis.Asymptotics.Uniformly
+@@ -524,7 +525,7 @@
+       simp_rw [integral_undef this, le_rfl]
+     rw [Pi.le_def]
+     intro t
+-    gcongr <;> apply sqrt_le_sqrt
++    gcongr <;> rw [Complex.norm_def] <;> apply sqrt_le_sqrt
+     · simp_rw [normSq_add_mul_I, add_le_add_iff_right, one_le_pow₀ σ_gt_one.le]
+     · rw [add_right_comm, ← ofReal_one, ← ofReal_add, normSq_add_mul_I, add_le_add_iff_right]
+       nlinarith
+@@ -578,7 +579,7 @@
+       simp_rw [integral_undef this, le_rfl]
+     rw [Pi.le_def]
+     intro t
+-    gcongr <;> apply sqrt_le_sqrt
++    gcongr <;> rw [Complex.norm_def] <;> apply sqrt_le_sqrt
+     · rw [normSq_add_mul_I, add_le_add_iff_right]; ring_nf; nlinarith
+     · rw [(by push_cast; ring : σ + t * I + 1 = ofReal (σ + 1) + t * I),
+         normSq_add_mul_I, add_le_add_iff_right]; ring_nf; nlinarith

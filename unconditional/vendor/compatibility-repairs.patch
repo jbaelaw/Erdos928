@@ -1,0 +1,58 @@
+--- a/upstream/PrimeNumberTheoremAnd/Erdos970/EulerMaclaurin.lean
++++ b/upstream/PrimeNumberTheoremAnd/Erdos970/EulerMaclaurin.lean
+@@ -1,6 +1,7 @@
+ module
+ 
+ public import Mathlib.NumberTheory.AbelSummation
++public import Mathlib.MeasureTheory.Function.Floor
+ 
+ @[expose] public section
+ 
+--- a/upstream/PrimeNumberTheoremAnd/Erdos970/MertensClassical.lean
++++ b/upstream/PrimeNumberTheoremAnd/Erdos970/MertensClassical.lean
+@@ -9,7 +9,7 @@
+ public import Mathlib.NumberTheory.Harmonic.GammaDeriv
+ public import Mathlib.Analysis.Asymptotics.Lemmas
+ public import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
+-public import Mathlib.Analysis.SpecialFunctions.Integrability.LogMeromorphic
++public import Mathlib.Analysis.SpecialFunctions.Integrability.Log
+ public import Mathlib.NumberTheory.EulerProduct.DirichletLSeries
+ public import Mathlib.NumberTheory.EulerProduct.ExpLog
+ public import Mathlib.Analysis.SpecialFunctions.Complex.LogBounds
+--- a/upstream/OAI/NumberTheory/JointDickman/Amplification/MultiplicityRates.lean
++++ b/upstream/OAI/NumberTheory/JointDickman/Amplification/MultiplicityRates.lean
+@@ -20,7 +20,9 @@
+     halfRankinExponent r-halfPoissonRate (1/2-r) = (1/2)*Real.binEntropy (2*r) := by
+   have hlog : Real.log ((1/2 : ℝ)/r) = -Real.log (2*r) := by
+     rw [show (1/2 : ℝ)/r = (2*r)⁻¹ by simp [mul_inv_rev,div_eq_mul_inv,mul_comm],Real.log_inv]
+-  unfold halfRankinExponent halfPoissonRate Real.binEntropy
++  unfold halfRankinExponent halfPoissonRate
++  rw [Real.binEntropy_eq_negMulLog_add_negMulLog_one_sub]
++  simp only [Real.negMulLog_def]
+   rw [hlog,show 2*((1/2 : ℝ)-r) = 1-2*r by ring]
+   simp only [Real.log_inv]
+   ring
+--- a/upstream/OAI/NumberTheory/JointDickman/Amplification/SubsetCardEntropy.lean
++++ b/upstream/OAI/NumberTheory/JointDickman/Amplification/SubsetCardEntropy.lean
+@@ -76,7 +76,8 @@
+   congr 1
+   have hθn : θ*(P.card : ℝ) = k := div_mul_cancel₀ _ hnr.ne'
+   change _ = (P.card : ℝ)*Real.binEntropy θ
+-  simp only [Real.binEntropy,Real.log_inv,t]
++  simp only [Real.binEntropy_eq_negMulLog_add_negMulLog_one_sub,
++    Real.negMulLog_def,Real.log_inv,t]
+   rw [← hθn]
+   ring
+ 
+--- a/upstream/OAI/NumberTheory/JointDickman/Amplification/OmissionEntropy.lean
++++ b/upstream/OAI/NumberTheory/JointDickman/Amplification/OmissionEntropy.lean
+@@ -40,7 +40,8 @@
+     _ = _ := by
+       rw [hlog]
+       congr 1
+-      simp only [t,Real.binEntropy,Real.log_inv]
++      simp only [t,Real.binEntropy_eq_negMulLog_add_negMulLog_one_sub,
++        Real.negMulLog_def,Real.log_inv]
+       ring
+ 
+ /-- On each endpoint the higher omissions cost an entropy exponent tending

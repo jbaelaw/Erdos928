@@ -1,8 +1,31 @@
 # Erdős Problem 928 as a corollary of OpenAI's joint Dickman law
 
-This repository formalizes the implication in the [one-page note](paper/erdos928_note.pdf).
-Its independent mathematical content is an explicit counting bound and a transfer
-of ordinary natural density. The Lean development uses **Mathlib only**.
+The original root project formalizes the implication in the
+[one-page note](paper/erdos928_note.pdf). Its independent mathematical content
+is an explicit counting bound and a transfer of ordinary natural density.
+The root proof files use **Mathlib only** and are preserved unchanged.
+
+The [full derivation](unconditional/README.md) adds OpenAI's actual Lean proof
+as the analytic input. Its final theorems have no joint Dickman law as a
+hypothesis. The source revisions, module-system port, and compatibility
+repairs are recorded in that subproject. The analytic result is credited
+to OpenAI result family 012.
+
+To check the full density theorem, use the separate project:
+
+```sh
+cd unconditional
+lake exe cache get
+bash verify.sh
+```
+
+The revised manuscript is available in
+[English](paper/versions/v2-2026-10-09/erdos928_note.pdf) and
+[Korean](paper/versions/v2-2026-10-09/ko/erdos928_note_ko.pdf), with the corresponding
+LaTeX sources and manuscript hash records beside the respective PDFs.
+Both revised versions have four pages; the earlier paper is preserved.
+
+## Original convention-transfer result
 
 For a natural-valued function `P`, compare the counts, over integers `2 ≤ n ≤ X`,
 
@@ -26,14 +49,15 @@ joint Dickman law stated in **OpenAI result family 012, Theorem 1.1, page 2**:
 > September 24, 2026,
 > [pinned source](https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf).
 
-The final Lean theorem is an **explicit implication**. This repository does not
+The final theorem in the root project is an **explicit implication**.
+That project does not
 re-prove OpenAI's analytic theorem, import its proof development, or claim an
 independent new solution of the analytic problem. It also makes no assertion
 about independence at three or more consecutive integers or about worldwide
 priority of this identification. The contribution is the precise identification
 with Problem 928 and the independently checked treatment of its conventions.
 
-## Verification status
+## Original project verification
 
 The core counting and transfer proofs passed Lean 4.34.1. The complete release
 build also passed Lean 4.35.0-rc3, with only `propext`, `Classical.choice`, and
@@ -46,7 +70,7 @@ The full Palomar mechanical preflight is recorded in
 Its report concerns the exact commit tested. A source build is not presented
 as a completed Palomar registration.
 
-## Reproduce
+## Reproduce the original project
 
 Lean: `v4.35.0-rc3`.
 Mathlib: `b84a70d6a5ed793cc46184160f4d4188d8c825fb`.
@@ -86,8 +110,10 @@ continuity and a squeeze argument; the final version uses the stronger finite
 counting estimate and does not need continuity of the density-value function.
 
 The analytic joint Dickman result is attributed to OpenAI. Bloom's problem page
-supplies the exact target formulation. This repository contains the substantive
-development of the counting and transfer results, rather than a wrapper around
-OpenAI's Lean proofs.
+supplies the exact target formulation. The root project contains the counting
+and transfer development.
+The separate `unconditional` project includes the upstream analytic proof
+closure, with its provenance and compatibility changes recorded explicitly.
 
-The repository, including the note, is licensed under Apache-2.0.
+The original development and note are licensed under Apache-2.0.
+Vendored components retain their upstream attribution and supplied licences.

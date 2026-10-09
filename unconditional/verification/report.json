@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "checked_at_kst": "2026-10-09T13:29:25.442101+09:00",
+  "lean": "v4.35.0-rc3",
+  "mathlib": "b84a70d6a5ed793cc46184160f4d4188d8c825fb",
+  "openai": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "source_modules": 1837,
+  "lake_build_jobs": 10854,
+  "compared_theorems": [
+    "Erdos928.erdos_928_density_exists",
+    "Erdos928.erdos_928_with_dickman_specification"
+  ],
+  "standard_axiom_audit": {
+    "OAI.JointDickmanPaper.joint_law": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Erdos928.jointDickmanLaw_proved": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Erdos928.problem928_proved": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Erdos928.erdos_928": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Erdos928.erdos_928_density_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Erdos928.erdos_928_with_dickman_specification": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "comparator_command": "lake comparator --config comparator-full.json --paranoid",
+  "comparator_exit_code": 0,
+  "accepted_kernels": [
+    "nanoda",
+    "Lean paranoid",
+    "lean4lean",
+    "con-leche",
+    "con-ron",
+    "Lean default"
+  ],
+  "lean4lean_checked_declarations": 88124,
+  "con_ron_accepted_declarations": 88123,
+  "kernel_note": "The con-ron/con-leche logs record Lean.Syntax as one inductive block modelled in process, with its generated records checked by the fold.",
+  "source_hashes_match": true,
+  "remote_job": "/srv/codex-jobs/erdos928/unconditional-20261009-01a11e28",
+  "paper_scope": "The compared claims are the exact two-variable density conclusion. The additional prime-counting refinements and historical comparisons in the revised manuscript are not claimed as part of this formalization.",
+  "palomar_registered": false
+}

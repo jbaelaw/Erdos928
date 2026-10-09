@@ -1,0 +1,49 @@
+ℹ [9252/9364] Replayed ConventionTransfer
+info: ConventionTransfer.lean:253:0: 'Erdos928.count_difference_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConventionTransfer.lean:254:0: 'Erdos928.real_count_difference_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConventionTransfer.lean:255:0: 'Erdos928.density_difference_tendsto_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConventionTransfer.lean:256:0: 'Erdos928.density_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConventionTransfer.lean:257:0: 'Erdos928.problem928_of_jointDickmanLaw' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [10147/10151] Replayed PrimeNumberTheoremAnd.Erdos970.ZetaBounds
+warning: vendor/upstream/PrimeNumberTheoremAnd/Erdos970/ZetaBounds.lean:2821:41: `ENNReal.addLECancellable_iff_ne` has been deprecated: Use `ENNReal.addLECancellable_iff_ne_top` instead
+
+Hint: Replace the deprecated name:
+  ENNReal.addLECancellable_iff_ne_̲t̲o̲p̲
+warning: vendor/upstream/PrimeNumberTheoremAnd/Erdos970/ZetaBounds.lean:2876:41: `ENNReal.addLECancellable_iff_ne` has been deprecated: Use `ENNReal.addLECancellable_iff_ne_top` instead
+
+Hint: Replace the deprecated name:
+  ENNReal.addLECancellable_iff_ne_̲t̲o̲p̲
+⚠ [10153/10331] Replayed StrongPNT.Erdos970.PNT3_RiemannZeta
+warning: vendor/upstream/StrongPNT/Erdos970/PNT3_RiemannZeta.lean:222:44: This simp argument is unused:
+  norm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp at habs1lt
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: vendor/upstream/StrongPNT/Erdos970/PNT3_RiemannZeta.lean:325:38: This simp argument is unused:
+  norm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [10158/10331] Replayed StrongPNT.Erdos970.PNT5_Strong
+warning: vendor/upstream/StrongPNT/Erdos970/PNT5_Strong.lean:1224:82: `ENNReal.addLECancellable_iff_ne` has been deprecated: Use `ENNReal.addLECancellable_iff_ne_top` instead
+
+Hint: Replace the deprecated name:
+  ENNReal.addLECancellable_iff_ne_̲t̲o̲p̲
+warning: vendor/upstream/StrongPNT/Erdos970/PNT5_Strong.lean:1316:82: `ENNReal.addLECancellable_iff_ne` has been deprecated: Use `ENNReal.addLECancellable_iff_ne_top` instead
+
+Hint: Replace the deprecated name:
+  ENNReal.addLECancellable_iff_ne_̲t̲o̲p̲
+⚠ [10666/10695] Replayed PrimeNumberTheoremAnd.ZetaBounds
+warning: vendor/upstream/PrimeNumberTheoremAnd/ZetaBounds.lean:3515:41: `ENNReal.addLECancellable_iff_ne` has been deprecated: Use `ENNReal.addLECancellable_iff_ne_top` instead
+
+Hint: Replace the deprecated name:
+  ENNReal.addLECancellable_iff_ne_̲t̲o̲p̲
+warning: vendor/upstream/PrimeNumberTheoremAnd/ZetaBounds.lean:3570:41: `ENNReal.addLECancellable_iff_ne` has been deprecated: Use `ENNReal.addLECancellable_iff_ne_top` instead
+
+Hint: Replace the deprecated name:
+  ENNReal.addLECancellable_iff_ne_̲t̲o̲p̲
+Build completed successfully (10854 jobs).

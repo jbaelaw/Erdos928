@@ -1,0 +1,15 @@
+{
+  "source_review_date_kst": "2026-10-09T11:32:57.445034+09:00",
+  "pages_each": 4,
+  "sha256": {
+    "../erdos928_note.tex": "b9518b15ec4f1aa1234dc251191d49b855d0aa7f8e395086ef57d5782bc308f8",
+    "../erdos928_note.pdf": "8270692dae350c05cd1611693ff4764997c0c91b035e1ba801a2638973a365d1",
+    "erdos928_note_ko.tex": "17950b2107828165b68cb6ea52d2c584292d71f151d9a67b8e256c61d2dc840d",
+    "erdos928_note_ko.pdf": "4edd491f8f0b98d997b4589d23150f1bce9191e9ad79ec51a6e83f61e2ffc597"
+  },
+  "source_review": "The bilingual manuscript review; this record does not claim a Lean verification of every statement in that manuscript.",
+  "formal_scope": "The unconditional Lean project targets the exact two-variable density conclusion; the prime-counting refinements and the historical source comparisons remain in the manuscript.",
+  "edition": "Korean translation of English version 2",
+  "english_source": "../erdos928_note.tex",
+  "english_pdf": "../erdos928_note.pdf"
+}

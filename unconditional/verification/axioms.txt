@@ -1,0 +1,23 @@
+'OAI.JointDickmanPaper.joint_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos928.jointDickmanLaw_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos928.problem928_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos928.erdos_928' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erdos928.erdos_928_density_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+Erdos928.erdos_928 : ∀ (a b : ℝ),
+  0 < a →
+    a < 1 →
+      0 < b →
+        b < 1 →
+          Filter.Tendsto (Erdos928.density fun n => ↑n.maxPrimeFac < ↑n ^ a ∧ ↑(n + 1).maxPrimeFac < ↑(n + 1) ^ b)
+            Filter.atTop
+            (nhds
+              (OAI.Erdos970.NumberTheoryLean.Dickman.rho (1 / a) * OAI.Erdos970.NumberTheoryLean.Dickman.rho (1 / b)))
+Erdos928.erdos_928_density_exists : ∀ (a b : ℝ),
+  0 < a →
+    a < 1 →
+      0 < b →
+        b < 1 →
+          ∃ L,
+            Filter.Tendsto (Erdos928.density fun n => ↑n.maxPrimeFac < ↑n ^ a ∧ ↑(n + 1).maxPrimeFac < ↑(n + 1) ^ b)
+              Filter.atTop (nhds L)
+'Erdos928.erdos_928_with_dickman_specification' depends on axioms: [propext, Classical.choice, Quot.sound]

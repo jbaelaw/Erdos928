@@ -1,0 +1,13 @@
+--- a/upstream/StrongPNT/Erdos970/PNT5_Strong.lean
++++ b/upstream/StrongPNT/Erdos970/PNT5_Strong.lean
+@@ -3409,9 +3409,7 @@
+           SmoothedChebyshevIntegrand SmoothingF ε X (↑σ - ↑T * I)‖ ≤
+           C' * X / (ε * T) * |1 + (Real.log X)⁻¹ - σ₁| := by
+         refine intervalIntegral.norm_integral_le_of_norm_le_const ?_
+-        convert this using 3
+-        apply uIoc_of_le
+-        exact interval_length_nonneg
++        simpa only [uIoc_of_le interval_length_nonneg] using this
+       _ ≤ C' * X / (ε * T) * 2 := by
+         apply mul_le_mul_of_nonneg_left
+         rw[abs_of_nonneg (sub_nonneg.mpr interval_length_nonneg)]

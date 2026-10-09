@@ -1,6 +1,7 @@
 # Manuscript versions
 
 - [Version 2 — 9 October 2026](v2-2026-10-09/README.md): the revised four-page English note, with explicit prime-counting bounds and a comparison of the original formulations. [PDF](v2-2026-10-09/erdos928_note.pdf) · [LaTeX](v2-2026-10-09/erdos928_note.tex).
+- [Korean translation of version 2](v2-2026-10-09/ko/README.md): the matching four-page Korean manuscript. [PDF](v2-2026-10-09/ko/erdos928_note_ko.pdf) · [LaTeX](v2-2026-10-09/ko/erdos928_note_ko.tex).
 - [Original published note](../erdos928_note.pdf): the one-page manuscript accompanying the original Lean formalization. [LaTeX](../erdos928_note.tex).
 
 These are manuscript versions. The existing Lean sources and their verification records retain their original scope. Each new manuscript edition is stored in its own directory; the original files remain at their established paths.

@@ -1,0 +1,22 @@
+--- a/upstream/PrimeNumberTheoremAnd/Erdos970/Tactic/AdditiveCombination.lean
++++ b/upstream/PrimeNumberTheoremAnd/Erdos970/Tactic/AdditiveCombination.lean
+@@ -3,7 +3,7 @@
+ public import Mathlib.Tactic.Abel
+ public import Erdos928Compat.LinearCombinationPrime
+ 
+-@[expose] public section
++@[expose] public meta section
+ 
+ namespace Erdos970
+ 
+--- a/upstream/PrimeNumberTheoremAnd/Tactic/AdditiveCombination.lean
++++ b/upstream/PrimeNumberTheoremAnd/Tactic/AdditiveCombination.lean
+@@ -8,7 +8,7 @@
+ public import Mathlib.Tactic.Abel
+ public import Erdos928Compat.LinearCombinationPrime
+ 
+-@[expose] public section
++@[expose] public meta section
+ 
+ /-!
+ # additive_combination Tactic

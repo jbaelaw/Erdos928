@@ -1,0 +1,107 @@
+version: "v0.4"
+
+project:
+  name: "Erdős Problem 928: a Lean derivation from OpenAI's joint Dickman law"
+  description: >-
+    For every fixed pair of real exponents 0<a,b<1, the integers n>=2 with
+    P(n)<n^a and P(n+1)<(n+1)^b have an ordinary natural density, where P
+    denotes the largest prime divisor. The density
+    equals rho(1/a)rho(1/b), where rho is the Dickman function. The compared
+    product-law statement includes the continuity, initial values, and delay
+    differential equation specifying rho on the nonnegative real axis.
+    The solution uses OpenAI's actual Lean proof of the joint Dickman law,
+    result family 012, rather than a joint-law hypothesis. It combines that
+    analytic input with the elementary finite counting and density-transfer
+    development in this repository. The upstream import closure is ported
+    to Lean 4.35, with source revisions, official upstream compatibility
+    patches, file hashes, and further compatibility repairs recorded.
+    No new analytic solution or priority for this consequence is claimed.
+  authors: ["JI HO BAE"]
+  responsible_maintainers: ["JI HO BAE"]
+  license: "Apache-2.0"
+
+sources:
+  - title: "The joint Dickman law for consecutive integers"
+    authors: ["OpenAI"]
+    id: "https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf"
+    type: "paper"
+    location: "Result family 012; Theorem 1.1, page 2"
+    relationship: "adapts"
+    author_endorsement: "not-contacted"
+    note: >-
+      The analytic proof is OpenAI's. Its Lean declaration
+      OAI.JointDickmanPaper.joint_law is actually used by FullSolution.lean.
+      The required upstream source closure and dependency patches are
+      preserved with their provenance in vendor/source-manifest.json.
+  - title: "Erdős Problem 928: quantitative comparisons and original formulations"
+    authors: ["JI HO BAE"]
+    id: "https://github.com/jbaelaw/Erdos928/blob/main/paper/versions/v2-2026-10-09/erdos928_note.pdf"
+    type: "paper"
+    location: "Corollary 2, the density assertion for the set A"
+    relationship: "formalizes"
+    author_endorsement: "participated"
+    note: >-
+      The selected formal claims concern the exact two-variable density
+      conclusion. This submission does not claim to formalize every
+      prime-counting refinement or historical comparison in the manuscript.
+  - title: "Erdős Problem 928"
+    authors: ["T. F. Bloom"]
+    id: "https://www.erdosproblems.com/928"
+    type: "web discussion"
+    location: "The two-variable natural-density question and product-density prediction"
+    relationship: "adapts"
+    author_endorsement: "not-contacted"
+
+classification:
+  arxiv: ["math.NT"]
+  msc2020: []
+
+status:
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+  scope: >-
+    The two-variable ordinary-density conclusion, with strict inequalities
+    and the respective bases n and n+1, without an analytic joint-law premise.
+    No assertion about three or more consecutive integers is included.
+  main_results:
+    - declaration: "Erdos928.erdos_928_density_exists"
+      file: "FullSolution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator-full.json"
+    - declaration: "Erdos928.erdos_928_with_dickman_specification"
+      file: "FullSolution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator-full.json"
+
+automation:
+  methods:
+    - method: "agent"
+      framework: "Codex"
+      tool_setup: "Lean, Lake, Mathlib, and Comparator on a remote Linux host."
+      prompting_notes: >-
+        The human requested that the existing conditional derivation be
+        connected to OpenAI's actual Lean proof and published without
+        damaging the earlier result or manuscript.
+  notes: >-
+    The agent implemented the connection, prepared the module-system port,
+    and repaired diagnosed compatibility issues under JI HO BAE's direction.
+    The analytic proof and its authorship remain with the cited upstream
+    project. No separate human expert review is claimed.
+
+fidelity:
+  divergences: >-
+    The finite counting transfer removes the differences between weak
+    same-base thresholds and strict shifted thresholds. The comparison
+    statement avoids importing a project-specific definition of rho into
+    the Challenge by including its standard defining properties. Only
+    values of rho on the nonnegative real axis enter the density formula.
+    The 4.35 compatibility port and subsequent proof-script adjustments are
+    recorded in vendor/source-manifest.json and vendor/compatibility-repairs.json.
+
+review:
+  status: "self-assessed"
+  notes: >-
+    The accompanying verification evidence reports the exact mechanical
+    checks performed. This field does not claim Palomar registration,
+    independent human peer review, or endorsement by an upstream author.

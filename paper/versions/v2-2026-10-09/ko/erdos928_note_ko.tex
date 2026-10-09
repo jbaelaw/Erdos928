@@ -1,0 +1,387 @@
+% !TeX program = xelatex
+\documentclass[11pt,a4paper]{amsart}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+  \usepackage[hangul]{kotex}
+\else
+  \usepackage[no-math]{fontspec}
+  \usepackage[hangul]{kotex}
+  \setmainfont[BoldFont=lmroman10-bold.otf,
+    ItalicFont=lmroman10-italic.otf,
+    BoldItalicFont=lmroman10-bolditalic.otf,
+    SmallCapsFont=lmromancaps10-regular.otf]{lmroman10-regular.otf}
+  \setmonofont{lmmono10-regular.otf}
+  \setmainhangulfont[BoldFont=UnBatangBold.ttf,
+    ItalicFont=UnBatang.ttf,BoldItalicFont=UnBatangBold.ttf,
+    SmallCapsFont=UnBatang.ttf]{UnBatang.ttf}
+\fi
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[expansion=false]{microtype}
+\usepackage{array,booktabs,tabularx}
+\usepackage{needspace}
+\setlength{\captionindent}{0pt}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\urlstyle{same}
+\linespread{1.15}
+\hypersetup{
+  pdftitle={Erd\H{o}s 문제 928: 정량적 비교와 원전의 정식화},
+  pdfauthor={JI HO BAE},
+  pdfsubject={OpenAI의 공동 Dickman 법칙에서 Erd\H{o}s 문제 928을 도출하는 초등적 비교 추정}
+}
+\newtheoremstyle{korplain}{6pt}{6pt}{\normalfont}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{korplain}
+\newtheorem{proposition}{명제}
+\newtheorem{corollary}[proposition]{따름정리}
+\renewcommand{\abstractname}{초록}
+\renewcommand{\proofname}{증명}
+\renewcommand{\refname}{참고문헌}
+\renewcommand{\tablename}{표}
+\renewcommand{\datename}{작성일:}
+\renewcommand{\sectionname}{}
+\newcommand{\N}{\mathbb N}
+\newcommand{\A}{\mathcal A}
+\newcommand{\B}{\mathcal B}
+\newcommand{\C}{\mathcal C}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title[Erd\H{o}s 문제 928과 공동 Dickman 법칙]{Erd\H{o}s 문제 928:\\
+정량적 비교와 원전의 정식화}
+\author{JI HO BAE}
+\date{2026년 10월 9일}
+
+\begin{document}
+\begin{abstract}
+OpenAI의 공동 Dickman 법칙으로부터 Erd\H{o}s 문제~928에 실제로 제시된 조건에 대한
+밀도 공식 $\rho(1/\alpha)\rho(1/\beta)$가 도출됨을 명시적으로 증명한다.
+여기서 $\rho$는 Dickman--de Bruijn 함수이다.
+$0<\alpha,\beta<1$을 고정하고 실수 $X\ge2$를 택한다.
+문제의 조건을 만족하는 정수들의 집합과 인용한 정리의 조건을 만족하는
+정수들의 집합을 $2\le n\le X$로 제한하면, 그 대칭차는
+$\pi(X^\alpha)+\pi((X+1)^\beta)$개 이하의 원소를 갖는다.
+이 부등식은 초등적으로 증명되며, $\pi$는 소수계수함수이다.
+이 상계는 엄격한 부등호를 사용하는 데 따른 차이와 두 번째 임계값을
+$n^\beta$에서 $(n+1)^\beta$로 바꾸는 데 따른 차이를 함께 처리한다.
+또한 두 임계값의 밑을 모두 $n$으로 두고 엄격한 부등호를 사용하는 정식화를 다루며,
+Erd\H{o}s의 1976년 두 논문과 Erd\H{o}s--Pomerance의 1978년 논문에 나타나는
+정식화들을 비교한다. 해석적 공동 법칙은 OpenAI의 성과이며,
+이 노트의 기여는 유한 범위에서의 명시적인 비교 추정과 이들 정식화 사이의
+정확한 대응을 제시하는 데 있다.
+\end{abstract}
+\maketitle
+
+\section{서론}
+
+정수 $n\ge2$에 대하여 $P(n)$을 $n$의 최대 소인수라 하고, $P(1)=1$로 둔다.
+$\rho$는 다음 조건으로 정해지는 $[0,\infty)$ 위의 연속함수인
+Dickman--de Bruijn 함수를 나타낸다.
+\[
+ \rho(u)=1\quad(0\le u\le1),\qquad
+ u\rho'(u)=-\rho(u-1)\quad(u>1).
+\]
+평활수에 관한 고전적인 극한 공식은
+\begin{equation}\label{eq:marginal}
+ \lim_{X\to\infty}\frac1X
+ \#\{1\le n\le X:P(n)\le X^c\}=\rho(1/c)
+ \qquad(0<c<1)
+\end{equation}
+이다(de Bruijn~\cite[51쪽, (1.1)--(1.2)]{deBruijn1951}).
+유한한 $u\ge0$에 대하여 $\rho(u)>0$이고,
+$u\to\infty$일 때 $\rho(u)\to0$이라는 표준적인 성질도 사용한다.
+이는 \cite[52쪽, (1.8)]{deBruijn1951}과 정의 방정식으로부터 얻어진다.
+$\N=\{1,2,\ldots\}$로 쓴다. 개수를 셀 때의 변수는 모두 정수이고,
+범위의 끝점 $X$는 실수이다. 자연밀도는 $X$ 이하의 원소를 가중치 없이 센 개수를
+$X$로 나눈 값의 극한을 뜻한다.
+
+Bloom의 문제 모음에 수록된 문제~928~\cite{Bloom928}은
+$\alpha,\beta\in(0,1)$을 고정했을 때
+\begin{equation}\label{eq:problem}
+ P(n)<n^\alpha,\qquad P(n+1)<(n+1)^\beta
+\end{equation}
+를 만족하는 정수들의 집합이 자연밀도를 갖는지 묻는다.
+문제에 덧붙은 설명에서는 이 밀도가 $\rho(1/\alpha)\rho(1/\beta)$인지도 묻는다.
+해당 페이지는 Erd\H{o}s~\cite{Erdos1976Manitoba,Erdos1976Debrecen}와
+Erd\H{o}s--Pomerance~\cite{ErdosPomerance1978}를 인용한다.
+이 원전들의 정식화는 \ref{sec:sources}절에서 비교한다.
+
+출발점이 되는 해석적 결과는 OpenAI의 공동 Dickman
+법칙~\cite[정리~1.1, 2쪽]{OpenAI2026}이다.
+이 정리에 따르면, 고정된 임의의 $\alpha,\beta\in(0,1)$에 대하여
+\begin{equation}\label{eq:JD}
+ \lim_{X\to\infty}\frac1X
+ \#\{2\le n\le X:P(n)\le n^\alpha,\ P(n+1)\le n^\beta\}
+ =\rho(1/\alpha)\rho(1/\beta).
+\end{equation}
+OpenAI는 자신의 결과가 Erd\H{o}s--Pomerance 공동 Dickman 추측을 해결한다고 명시한다.
+그 논문의 11.3절에서는 임계값이 $X^\alpha,X^\beta$인 경우와
+이에 대응하는 상위 꼬리 조건에 대해서도 같은 종류의 법칙을 증명한다.
+이 노트에서는 이 해석적 결과들을 인용하여 사용한다.
+명제~\ref{prop:comparison}에서는 \eqref{eq:problem}에 제시된 조건과 Erd\H{o}s의 엄격한
+부등식 형태로 옮길 때 필요한 조건 차이에 대해 명시적인 초등적 상계를 제시한다.
+\ref{sec:sources}절에서는 이 결과들이 적용되는 원전의 정확한 명제들을 확인한다.
+
+\section{유한 범위에서의 개수 비교}\label{sec:comparison}
+
+$\alpha,\beta\in(0,1)$을 고정한다. $X\ge2$에 대하여 다음과 같이 정의한다.
+\begin{align*}
+ \A_{\alpha,\beta}(X)
+   &=\{n\in\N:2\le n\le X,\ P(n)<n^\alpha,
+                                \ P(n+1)<(n+1)^\beta\},\\
+ \B_{\alpha,\beta}(X)
+   &=\{n\in\N:2\le n\le X,\ P(n)\le n^\alpha,
+                                \ P(n+1)\le n^\beta\},\\
+ \C_{\alpha,\beta}(X)
+   &=\{n\in\N:2\le n\le X,\ P(n)<n^\alpha,
+                                \ P(n+1)<n^\beta\}.
+\end{align*}
+집합 $\A$와 $\C$는 각각 문제~928과
+\cite[25쪽]{Erdos1976Manitoba}의 조건~(1)에 대응하며,
+$\B$는 \eqref{eq:JD}에 등장하는 집합이다.
+$\pi(y)=\#\{p\le y:p\text{는 소수}\}$로 두고,
+두 집합의 대칭차를 $S\mathbin\triangle T$로 나타낸다.
+
+\begin{proposition}[조건의 차이에 대한 비교 추정]\label{prop:comparison}
+임의의 $\alpha,\beta\in(0,1)$과 실수 $X\ge2$에 대하여
+\begin{align}
+ \#\bigl(\A_{\alpha,\beta}(X)\mathbin\triangle
+          \B_{\alpha,\beta}(X)\bigr)
+ &\le \pi(X^\alpha)+\pi((X+1)^\beta),\label{eq:AB}\\
+ 0\le\#\B_{\alpha,\beta}(X)-\#\C_{\alpha,\beta}(X)
+ &\le \pi(X^\alpha)+\pi(X^\beta).\label{eq:BC}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+아래첨자와 인수 $X$를 생략한다.
+$n\in\B\setminus\A$이면 $P(n+1)\le n^\beta<(n+1)^\beta$이므로
+$\A$를 정의하는 두 번째 조건은 성립한다.
+따라서 첫 번째 조건이 성립하지 않아야 하며, 이에 따라 $P(n)=n^\alpha$이다.
+소수 $p=P(n)\le X^\alpha$가 주어지면 $n=p^{1/\alpha}$가 유일하게 정해진다.
+그러므로 $\#(\B\setminus\A)\le\pi(X^\alpha)$이다.
+
+$n\in\A\setminus\B$이면 $\B$를 정의하는 첫 번째 조건은 성립하므로
+\[
+ n^\beta<P(n+1)<(n+1)^\beta.
+\]
+$\beta>0$이므로 정수 $m\ge2$에 대한 구간
+$(m^\beta,(m+1)^\beta)$들은 서로소이다.
+따라서 $\A\setminus\B$ 위에서 사상 $n\mapsto P(n+1)$은 단사이며,
+그 값은 $(X+1)^\beta$보다 작은 소수이다.
+이로부터 $\#(\A\setminus\B)\le\pi((X+1)^\beta)$를 얻으며,
+따라서 \eqref{eq:AB}가 성립한다.
+
+마지막으로 $\C\subseteq\B$이다.
+$n\in\B\setminus\C$이면 $P(n)=n^\alpha$ 또는 $P(n+1)=n^\beta$이다.
+앞의 논증에 따라 첫 번째 등식을 만족하는 정수는 $\pi(X^\alpha)$개 이하이다.
+두 번째 등식의 경우에는 $X^\beta$ 이하의 소수에 의해
+$n=P(n+1)^{1/\beta}$가 유일하게 정해지므로,
+이를 만족하는 정수는 $\pi(X^\beta)$개 이하이다.
+두 상계를 더하면 \eqref{eq:BC}를 얻는다.
+\end{proof}
+
+\begin{corollary}[문제~928과 Erd\H{o}s의 엄격한 부등식 형태]\label{cor:density}
+고정된 임의의 $\alpha,\beta\in(0,1)$에 대하여
+\begin{equation}\label{eq:conclusion}
+ \lim_{X\to\infty}\frac{\#\A_{\alpha,\beta}(X)}X
+ =\lim_{X\to\infty}\frac{\#\C_{\alpha,\beta}(X)}X
+ =\rho(1/\alpha)\rho(1/\beta).
+\end{equation}
+특히 문제~928에서 묻는 밀도와
+\cite[25쪽]{Erdos1976Manitoba}에서 묻는 밀도 $d(\alpha,\beta)$는
+모두 존재하며, 예측된 곱과 같다.
+\end{corollary}
+
+\begin{proof}
+유한집합에 대해서는 $|\#S-\#T|\le\#(S\mathbin\triangle T)$이다.
+$\pi(y)\le\lfloor y\rfloor$이므로 명제~\ref{prop:comparison}의 두 상계는
+모두 $O(X^\alpha+X^\beta)=o(X)$이다.
+$X$로 나누고 \eqref{eq:JD}을 적용하면 \eqref{eq:conclusion}의 두 극한을 얻는다.
+\end{proof}
+
+비교 추정 자체는 공동 Dickman 법칙과 독립적으로 성립한다.
+이 추정은 고정된 $\alpha,\beta$에 대해 조건을 바꿀 때 생기는 차이를 정량화하며,
+개수의 점근적 평가는 \eqref{eq:JD}에서 얻는다.
+
+\section{원전의 정식화와의 비교}\label{sec:sources}
+
+임계값이 개수를 세는 대상인 정수에 따라 달라지면 \textbf{이동 임계값},
+계수 범위 전체에서 일정하게 유지되면 \textbf{고정 임계값}이라 부른다.
+따라서 $n^\alpha$와 $(n+1)^\beta$는 이동 임계값이고,
+$X^\alpha$와 $X^\beta$는 고정 임계값이다. 다음과 같이 둔다.
+\[
+ a(0)=1,\qquad a(t)=1-\rho(1/t)\quad(0<t\le1).
+\]
+표~\ref{tab:forms}는 두 연속정수에 관한 정식화를 정리한 것이다.
+이어서 임계값과 부등호의 변경 및 계수 범위의 이동을 각각 정당화한다.
+
+\begin{table}[htbp]
+\small
+\caption{두 연속정수에 관한 정식화와 결론.
+지수는 모두 고정하며, \mbox{$0<\alpha,\beta<1$},
+\mbox{$\gamma>1$}, \mbox{$0\le t,s\le1$}이다.
+별도 표시가 없으면 범위는 \mbox{$2\le n\le X$}이다.}
+\label{tab:forms}
+\begin{tabularx}{\textwidth}{@{}L{32mm}Y L{46mm}@{}}
+\toprule
+출처 & 조건 & 결론\\
+\midrule
+\cite{Bloom928}; \cite[25쪽]{Erdos1976Manitoba}의 독립성 서술
+ & $P(n)<n^\alpha$, $P(n+1)<(n+1)^\beta$
+ & 따름정리~\ref{cor:density}의 집합 $\A$: 밀도
+   $\rho(1/\alpha)\rho(1/\beta)$\\[3pt]
+\cite[25쪽, (1)]{Erdos1976Manitoba}
+ & $P(n)<n^\alpha$, $P(n+1)<n^\beta$
+ & 따름정리~\ref{cor:density}의 집합 $\C$: 밀도
+   $\rho(1/\alpha)\rho(1/\beta)$\\[3pt]
+\cite[272--273쪽]{Erdos1976Debrecen}, $r=2$
+ & $P(n+1)\le k$, $P(n+2)\le k$; $1\le n<k^\gamma$
+ & OpenAI~\cite[(11.7), 80쪽]{OpenAI2026}:
+   개수 $\sim\rho(\gamma)^2 k^\gamma$\\[3pt]
+\cite[311쪽]{ErdosPomerance1978}
+ & $P(n)\ge X^t$, $P(n+1)\ge X^s$
+ & OpenAI~\cite[(11.8)과 그다음 문단, 80쪽]{OpenAI2026}:
+   개수$/X\to a(t)a(s)$\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Erd\H{o}s의 Manitoba 논문}
+\cite[25쪽]{Erdos1976Manitoba}에서 Erd\H{o}s는
+$P(n)<n^\alpha$와 $P(n+1)<(n+1)^\beta$의 독립성을 예상한다.
+이어서 자신의 조건~(1), 즉 $P(n)<n^\alpha$와 $P(n+1)<n^\beta$를
+만족하는 정수들의 집합이 밀도 $d(\alpha,\beta)$를 갖는지 묻는다.
+따라서 웹페이지의 문제는 독립성 서술에 등장하는 부등식들을 사용하고,
+원전의 조건~(1)은 두 번째 임계값으로 $n^\beta$를 사용한다.
+따름정리~\ref{cor:density}는 두 형태를 모두 명시적으로 다룬다.
+
+Erd\H{o}s는 고정된 임의의 $\alpha,\beta>0$에 대해 이 엄격한 부등식들을
+만족하는 해가 무한히 많은지도 묻는다.
+\eqref{eq:conclusion}의 값이 양수이므로 이 무한성이 따라온다.
+매개변수가 $(0,1)$ 밖에 있는 경우에도 그보다 작은 양의 매개변수를
+이 구간 안에서 택하면 된다.
+무한성 자체는 이미 알려져 있었다. \cite{Bloom928}에 기록된 바와 같이,
+Schinzel~\cite[정리~14, 231쪽]{Schinzel1967}을
+$(2n+1)^2-1=4n(n+1)$에 적용하면 이를 얻는다.
+이 정리에 따르면 어떤 상수 $K>0$에 대하여
+\[
+ P(n(n+1))\le n^{K/\log\log n}
+\]
+을 만족하는 정수 $n\ge3$이 무한히 많이 존재한다.
+$K/\log\log n\to0$이므로, 양의 매개변수 쌍 $\alpha,\beta$를 하나 고정하면
+이 정수들 중 충분히 큰 $n$은 Erd\H{o}s의 엄격한 부등식들을 만족한다.
+
+\subsection{Erd\H{o}s의 Debrecen 논문}
+\cite[272--273쪽]{Erdos1976Debrecen}에서 $\alpha$로 표시한 지수를
+여기서는 $\gamma>1$로 쓴다.
+Erd\H{o}s는 $P(m)\le k$를 만족하는 $m\le k^\gamma$의 개수가
+$(c_\gamma+o(1))k^\gamma$라는 일변수 점근식을 다시 언급하고,
+고정된 정수 $r\ge1$에 대해 양의 정수 $k$가 무한대로 갈 때
+\begin{equation}\label{eq:Debrecen}
+ \#\{1\le n<k^\gamma:P((n+1)\cdots(n+r))\le k\}
+  =(c_\gamma^r+o(1))k^\gamma
+\end{equation}
+가 성립한다고 추측한다. \eqref{eq:marginal}로부터 $c_\gamma=\rho(\gamma)$를 얻는다.
+
+OpenAI~\cite[(11.7), 80쪽]{OpenAI2026}는 고정된 $c,d\in(0,1)$에 대해
+\begin{equation}\label{eq:fixed}
+ \lim_{X\to\infty}\frac1X
+ \#\{2\le m\le X:P(m)\le X^c,\ P(m+1)\le X^d\}
+ =\rho(1/c)\rho(1/d)
+\end{equation}
+을 증명한다. \eqref{eq:Debrecen}에서 $r=2$일 때
+$X=k^\gamma$, $m=n+1$, $c=d=1/\gamma$로 둔다.
+$P(m(m+1))=\max\{P(m),P(m+1)\}$이므로 소인수에 관한 조건들은
+\eqref{eq:fixed}의 조건들과 일치한다.
+범위 $1\le n<X$를 이동하여 얻은 범위와 $2\le m\le X$는
+끝점에서 많아야 한 항만 다르다.
+따라서 \eqref{eq:fixed}로부터 $r=2$인 경우의 \eqref{eq:Debrecen}을 얻는다.
+
+웹페이지~\cite{Bloom928}는 고차 추측을
+$0\le i<r$에 대해 $P(n+i)\le n^\alpha$라는 조건으로 서술한다.
+그중 $r=2$인 경우는 \eqref{eq:JD}에서 $\beta=\alpha$로 둔 것과 같다.
+여기서 사용하는 결과들은 두 연속정수에 관한 것이며,
+$r\ge3$인 경우의 주장을 증명하지는 않는다.
+
+\Needspace{10\baselineskip}
+\subsection{Erd\H{o}s와 Pomerance의 논문}
+\cite[311쪽]{ErdosPomerance1978}에서 두 저자는 고정 임계값과 상위 꼬리 조건을 사용한다.
+$0\le t,s\le1$에 대하여
+\begin{equation}\label{eq:upper}
+ b(t,s)=\lim_{X\to\infty}\frac1X
+ \#\{2\le n\le X:P(n)\ge X^t,\ P(n+1)\ge X^s\}
+\end{equation}
+가 존재하고, $[0,1]^2$에서 연속이며, $a(t)a(s)$와 같은지 묻는다.
+여기서 원전의 $a(t)$는 이에 대응하는 일변수 상위 꼬리 극한이다.
+\eqref{eq:marginal}과 아래의 등호 및 끝점 처리를 함께 사용하면,
+원전의 $a(t)$가 앞에서 정의한 함수와 같음을 알 수 있다.
+
+$0<t,s<1$일 때 \eqref{eq:fixed}과 두 주변분포의 극한 공식에 포함배제 원리를
+적용하면, 엄격한 상위 꼬리 조건 $P(n)>X^t$, $P(n+1)>X^s$에 대한
+극한값 $a(t)a(s)$를 얻는다.
+이동된 변수의 주변분포에 대해서는 $n$을 $n+1$로 바꾸어도
+계수 범위에서 $O(1)$개의 항만 달라진다.
+
+등호를 허용하는 상위 꼬리 조건으로 옮기기 위해,
+고정된 $0<t\le1$에 대한 등식 $P(m)=X^t$를 살펴보자.
+이 등식은 $X^t$가 소수 $p$인 경우에만 가능하다.
+그때에는 $p\mid m$이므로 $m\le X+1$인 해당 정수는 많아야
+$\lfloor(X+1)/p\rfloor=O(X^{1-t}+1)=o(X)$개이다.
+
+지수가 $0$이면 $m\ge2$에 대해 상위 꼬리 조건은 자동으로 성립한다.
+지수가 $1$이고 범위가 $2\le m\le X+1$이면,
+$P(m)\ge X$로부터 $m\in[X,X+1]$가 따라오므로,
+해당 정수는 많아야 두 개이다. 따라서 모든 끝점에서도 \eqref{eq:upper}가 성립한다.
+$\rho(1)=1$이고 $u\to\infty$일 때 $\rho(u)\to0$이므로
+$a$는 $[0,1]$에서 연속이다. 이에 따라 $b(t,s)=a(t)a(s)$도 연속이다.
+
+등호와 끝점 처리를 포함한 이 도출 과정은 이미
+\cite[(11.8)과 그다음 문단, 80쪽]{OpenAI2026}에 제시되어 있다.
+여기서의 비교는 그 결과를 \cite{ErdosPomerance1978}의 정확한 명제와 대응시키는 역할을 한다.
+따라서 표~\ref{tab:forms}에 제시된 두 연속정수에 관한 모든 정식화는
+인용한 공동 Dickman 법칙과 그 고정 임계값 형태로부터 도출된다.
+
+\begin{thebibliography}{9}
+\bibitem{Bloom928}
+T.~F. Bloom, \emph{Erd\H{o}s Problem \#928},
+2026년 10월 9일 접속.
+\newline\url{https://www.erdosproblems.com/928}.
+
+\bibitem{deBruijn1951}
+N.~G. de Bruijn, \emph{On the number of positive integers $\le x$ and
+free of prime factors $>y$}, Nederl. Akad. Wetensch. Proc. Ser. A
+\textbf{54} (1951), 50--60.
+\newline\url{https://pure.tue.nl/ws/files/1793853/597499.pdf}.
+
+\bibitem{Erdos1976Manitoba}
+P.~Erd\H{o}s, \emph{Problems and results on number theoretic properties of
+consecutive integers and related questions}, Proceedings of the Fifth
+Manitoba Conference on Numerical Mathematics (Winnipeg, 1975), Congressus
+Numerantium XVI, Utilitas Math., Winnipeg, 1976, pp.~25--44.
+\newline\url{https://users.renyi.hu/~p_erdos/1976-39.pdf}.
+
+\bibitem{Erdos1976Debrecen}
+P.~Erd\H{o}s, \emph{Problems and results on consecutive integers}, Publ.
+Math. Debrecen \textbf{23} (1976), 271--282.
+\newline\url{https://doi.org/10.5486/PMD.1976.23.3-4.15}.
+
+\bibitem{ErdosPomerance1978}
+P.~Erd\H{o}s and C.~Pomerance, \emph{On the largest prime factors of $n$
+and $n+1$}, Aequationes Math. \textbf{17} (1978), 311--321.
+\newline\url{https://users.renyi.hu/~p_erdos/1978-29.pdf}.
+
+\bibitem{OpenAI2026}
+OpenAI, \emph{The joint Dickman law for consecutive integers}, OpenAI
+Math Release preprint, September~24, 2026, commit
+\texttt{fd4aeeb2ee4f}.
+\newline\url{https://github.com/openai/math/blob/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf}.
+
+\bibitem{Schinzel1967}
+A.~Schinzel, \emph{On two theorems of Gelfond and some of their
+applications}, Acta Arith. \textbf{13} (1967), 177--236.
+\newline\url{https://doi.org/10.4064/aa-13-2-177-236}.
+\end{thebibliography}
+
+\end{document}
