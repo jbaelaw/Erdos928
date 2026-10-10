@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "publication_version": "6",
+  "publication_date": "2026-10-10",
+  "manuscript_date": "2026-10-09",
+  "language": "en",
+  "title": "Erdős Problem 928: quantitative comparisons and original formulations",
+  "author": "JI HO BAE",
+  "pages": 4,
+  "baseline_repository_commit": "c9417863d827cf9e8e0ba04bd3759ceaacec860f",
+  "identical_manuscript_content_to_version": "5",
+  "files": {
+    "erdos928_note.tex": {
+      "sha256": "0e9d8480945f2f96a0c03daa33adbcfbfe63329f325cef1c781e975a6f2cf06f",
+      "bytes": 17478
+    },
+    "erdos928_note.pdf": {
+      "sha256": "d78ffcd4e19927a87ab889d9f154c369cae60af80764dd6ffc359645ecbcf4ba",
+      "bytes": 340818
+    }
+  },
+  "verification": {
+    "current_source_compilation": "The current open LaTeX source compiled successfully with the desktop compiler on 10 October 2026.",
+    "manuscript_and_pdf": "The uploaded source and PDF are byte-for-byte identical to the reviewed version 5 and the current local artifacts.",
+    "prior_review": "Version 5: English style, mathematical exposition, source attribution, bilingual mathematical consistency and all eight English/Korean pages reviewed.",
+    "formalization_scope": "Manuscript publication only; no Lean changes or new formal-verification claim."
+  },
+  "preservation": "Only a new version directory, commit, tag and release are added. Every pre-existing repository file and tag, the separate Lean branch and existing release assets are preserved."
+}
